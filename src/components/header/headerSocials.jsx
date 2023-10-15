@@ -3,7 +3,7 @@ import {BsLinkedin} from 'react-icons/bs'
 import {BsGithub} from 'react-icons/bs'
 import {BsInstagram} from 'react-icons/bs'
 
-export const headerSocials = () => {
+export const HeaderSocials = () => {
   return (
     <div className='header__socials'>
         <a href="https://ca.linkedin.com/in/sheel-patel-1212a0262" target='_blank'><BsLinkedin/></a>
@@ -14,4 +14,4 @@ export const headerSocials = () => {
 
 }
 
-export default headerSocials
+export default HeaderSocials

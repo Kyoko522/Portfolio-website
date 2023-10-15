@@ -1,8 +1,8 @@
-import React from 'react'
-import './header.css'
-import CTA from './CTA'
-import Sheel_Img from '../..//assets/sheel.png'
-import headerSocials from './headerSocials'
+import React from 'react';
+import './header.css';
+import CTA from './CTA';
+import HeaderSocials from './HeaderSocials';
+import Sheel from '../../assets/sheelmain.png';
 
 export const Header = () => {
   return (
@@ -12,17 +12,14 @@ export const Header = () => {
         <h1>Sheel Patel</h1>
         <h5 className='text-light'>Fullstack Developer and Mobile Developer</h5>
         <CTA />
-        <headerSocials />
+        <HeaderSocials />
         <div className="sheel_img">
-          <img src={Sheel_Img}/>
-          </div>
-          <a href='#content' className='scroll_down'>Scroll Down</a>
+          <img src={Sheel} alt='Sheel Patel' />
+        </div>
+        <a href='#content' className='scroll_down'>Scroll Down</a>
       </div>
     </header>
-  )
-}
+  );
+};
 
-// us this link to comtinue working on it when u get free again
-// https://youtu.be/G-Cr00UYokU?t=3020
-
-export default Header
+export default Header;
