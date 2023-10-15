@@ -1,9 +1,10 @@
 import React from 'react'
-import './Nav.css'
+import './nav.css'
 
 export const Nav = () => {
-  return import
-  (
+  return (
     <div>Nav</div>
   )
 }
+
+export default Nav
