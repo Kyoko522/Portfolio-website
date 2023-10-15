@@ -3,7 +3,7 @@ import './header.css'
 
 export const Header = () => {
   return (
-    <div>this is suppose to be seen but it's not</div>
+    <div>Header</div>
   
   )
 }
