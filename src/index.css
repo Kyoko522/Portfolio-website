@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -9,7 +11,124 @@
 }
 
 :root{
-    --color-background: #f0f0f7;
-    --color-primary-lighter: #9871f5;
-    
+    --color-background: #1f1f38;
+    --color-secundary: #00C9A7;
+    --color-primary: #845EC2;
+    --color-primary-lighter: #F3c5FF;
+    --color-white: #fff;
+    --color-light: #FEFEDF;
+
+    --cotainer-width-lg: 75%;
+    --cotainer-width-md: 86%;
+    --cotainer-width-sm: 90%;
+
+    --transtition: all 400ms ease;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* remove the scroll bar on the side of the screen */
+::-webkit-scrollbar{ 
+    display: none;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-white);
+    line-height: 1.7;
+}
+
+/* General Styles */
+.container{
+    width: var(--cotainer-width-lg);
+    margin: 0 auto;
+}
+
+h1,  h2, h3, h4, h5{
+    font-weight: 500;
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+section{
+margin-top: 8rem;
+}
+
+section > h2, section > h5{
+    text-align: center;
+    color: var(--color-light)
+}
+
+section > h2{
+    color: var(--color-primary);
+    margin-bottom: 3rem;
+}
+
+.text-light{
+    color: var(--color-light);
+}
+
+a{
+    color: var(--color-primary);
+    transition: var(--transtition);
+}
+
+a ::hover{
+    color: var(--color-primary-lighter);
+}
+
+.btn{
+    width: max-content;
+    display: inline-block;
+    color: var(--color-primary);
+    padding: 0.75rem 1.2rem;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    border: 1px solid var(--color-primary);
+    transition: var(--transtition);
+}
+
+btn :hover{
+    background: var(--color-white);
+    color: var(--color-background);
+    border-color: transparent;
+}
+
+.btn-primary{
+    background: var(--color-primary);
+    color: var(--color-background);
+}
+
+img{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+/* Making it resposive for tablets */
+@media screen and (max-width: 1028px){
+    .container{
+        width: var(--cotainer-width-md);
+    }
+
+    section{
+        margin-top: 6rem;
+    }
+}
+
+/* Making it resposive for mobile */
+@media screen and (max-width: 600px){
+    .container{
+        width: var(--cotainer-width-sm);
+    }
+
+    section > h2{
+        margin-bottom: 2rem;
+    }
 }
