@@ -15,4 +15,7 @@ export const Header = () => {
   )
 }
 
+// us this link to comtinue working on it when u get free again
+// https://youtu.be/G-Cr00UYokU?t=3020
+
 export default Header

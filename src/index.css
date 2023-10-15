@@ -78,7 +78,7 @@ a{
     transition: var(--transtition);
 }
 
-a ::hover{
+a:hover{
     color: var(--color-primary-lighter);
 }
 
@@ -93,7 +93,7 @@ a ::hover{
     transition: var(--transtition);
 }
 
-btn :hover{
+btn:hover{
     background: var(--color-white);
     color: var(--color-background);
     border-color: transparent;
