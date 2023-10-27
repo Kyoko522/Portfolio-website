@@ -32,7 +32,7 @@
 
 .about__cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: (3, 1fr);
     gap: 1.5rem;
 }
 
@@ -69,6 +69,11 @@ transition: var(--transition);
 .about__description p {
     margin: 2rem 0 2.6rem;
     color: var(--color-light);
+    text-align: center;
+}
+
+.about__description a {
+   align-items: center;
 }
 
 /* Making it resposive for tablets */

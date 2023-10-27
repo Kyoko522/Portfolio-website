@@ -40,7 +40,7 @@ export const About = () => {
             
         </div>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quibusdam harum, facilis eum culpa temporibus quas corporis rerum quisquam officia fugiat laboriosam autem sequi dignissimos voluptatibus impedit. Ducimus, facere sed.</p>
+        <p>I'm Sheel Patel, a dedicated and versatile Computer Science student at Toronto Metropolitan University. Proficient in programming languages like Python, Java, and more, with a GPA of 3.7+. Ready to excel in computer science and contribute to innovative projects and teams. Explore my work below!</p>
 
         <a href='#contact' className='btn btn-primary'>Let's Talk</a>
       </div>
