@@ -8,13 +8,8 @@ export const Experience = () => {
       <h2>Experience</h2>
 
       <div className='container experience__container'>
-        <div className='experience_card'>
-          </div>
-
-          <div className='experience_card'>
-
-          </div>
-          </div>
+      
+      </div>
 
     </section>
   )

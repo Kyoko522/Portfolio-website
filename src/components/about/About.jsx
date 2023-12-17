@@ -9,42 +9,43 @@ export const About = () => {
       <h5>Get To Know</h5>
       <h2>About Me</h2>
 
+
       <div className='container about__container'>
 
-      <div className='about__me'>
-        <div className='about__me-image'>
-          <img src={Sheel} alt="sheel photo" />
-        </div>
-      </div>
-
-      <div className='about__description'>
-        <div className="about_cards">
-
-          <article className="about__card">
-            <FaAward className='about__icons'/>
-            <h5>Experience</h5>
-            <small>3+ Years Working</small>
-            </article>
-
-            <article className="about__card">
-            <FaAward className='about__icons'/>
-            <h5>Experience</h5>
-            <small>3+ Years Working</small>
-            </article>
-
-            <article className="about__card">
-            <FaAward className='about__icons'/>
-            <h5>Experience</h5>
-            <small>3+ Years Working</small>
-            </article>
-            
+        <div className= 'about__me'>
+          <div className= 'about__me-image'>
+            <img src={Sheel} alt='Sheel About Image'/>
+          </div>
         </div>
 
-        <p>I'm Sheel Patel, a dedicated and versatile Computer Science student at Toronto Metropolitan University. Proficient in programming languages like Python, Java, and more, with a GPA of 3.7+. Ready to excel in computer science and contribute to innovative projects and teams. Explore my work below!</p>
+        <div className='about__content'>
+          <div className='about__cards'>
+            <article className='about__card'>
+              <FaAward className='about__icon'/>
+              <h5>School</h5>
+              <small>2 Years</small>
+              </article>
+              <article className='about__card'>
+              <FaAward className='about__icon'/>
+              <h5>Experience</h5>
+              <small>2 Years</small>
+              </article>
+              <article className='about__card'>
+              <FaAward className='about__icon'/>
+              <h5>Projects</h5>
+              <small>10 plus</small>
+              </article>
 
-        <a href='#contact' className='btn btn-primary'>Let's Talk</a>
+          </div>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet blanditiis mollitia autem possimus, atque ut at eveniet ea explicabo tenetur consequuntur eligendi, nam beatae dolores cum iusto! Quisquam, quas? Non.
+          </p>
+          <a href='#content' className='btn btn-primary'>Let's Talk</a> 
+        </div>
+
       </div>
-      </div>
+      
     </section>
   )
 }

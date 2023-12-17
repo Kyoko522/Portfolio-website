@@ -3,7 +3,72 @@ import './portfolio.css'
 
 export const Portfolio = () => {
   return (
-    <section id='portfolio'>Portfolio</section>
+    <section id='portfolio'>
+      <h5>My Recent Projects</h5>
+      <h2>Portfolio</h2>
+
+      <div className='container portfolio__container'>
+        <article className='portfolio__item'>
+          <div className='portfolio__item-image'>
+            <img src="" alt="" />
+          </div>
+          <h3>This is a protfolio item title</h3>
+          <a href='#' className='btn btn-primary'>View Code</a>
+          <a href='#' className='btn btn-primary'>Live Demo</a>
+        </article>
+
+        <article className='portfolio__item'>
+          <div className='portfolio__item-image'>
+            <img src="" alt="" />
+          </div>
+          <h3>This is a protfolio item title</h3>
+          <a href='#' className='btn btn-primary'>View Code</a>
+          <a href='#' className='btn btn-primary'>Live Demo</a>
+        </article>
+
+
+        <article className='portfolio__item'>
+          <div className='portfolio__item-image'>
+            <img src="" alt="" />
+          </div>
+          <h3>This is a protfolio item title</h3>
+          <a href='#' className='btn btn-primary'>View Code</a>
+          <a href='#' className='btn btn-primary'>Live Demo</a>
+        </article>
+
+
+        <article className='portfolio__item'>
+          <div className='portfolio__item-image'>
+            <img src="" alt="" />
+          </div>
+          <h3>This is a protfolio item title</h3>
+          <a href='#' className='btn btn-primary'>View Code</a>
+          <a href='#' className='btn btn-primary'>Live Demo</a>
+        </article>
+
+
+        <article className='portfolio__item'>
+          <div className='portfolio__item-image'>
+            <img src="" alt="" />
+          </div>
+          <h3>This is a protfolio item title</h3>
+          <a href='#' className='btn btn-primary'>View Code</a>
+          <a href='#' className='btn btn-primary'>Live Demo</a>
+        </article>
+
+
+        <article className='portfolio__item'>
+          <div className='portfolio__item-image'>
+            <img src="" alt="" />
+          </div>
+          <h3>This is a protfolio item title</h3>
+          <a href='#' className='btn btn-primary'>View Code</a>
+          <a href='#' className='btn btn-primary'>Live Demo</a>
+        </article>
+
+      </div>
+
+    </section>
   )
 }
 
