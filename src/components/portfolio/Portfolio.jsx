@@ -54,6 +54,15 @@ export const Portfolio = () => {
           <a href='#' className='btn btn-primary'>Live Demo</a>
         </article>
 
+        <article className='portfolio__item'>
+          <div className='portfolio__item-image'>
+            <img src={IMG1} alt="" />
+          </div>
+          <h3>This is a protfolio item title</h3>
+          <a href='#' className='btn btn-primary'>View Code</a>
+          <a href='#' className='btn btn-primary'>Live Demo</a>
+        </article>
+
       </div>
 
     </section>
