@@ -25,3 +25,25 @@
 .portfolio__items h3{
     margin: 1.2rem 
 }
+.portfolio__items-cta{
+display: flex;
+gap: 1rem;
+margin-bottom: 1rem; 
+}
+
+/* Making it resposive for tablets */
+@media screen and (max-width: 1028px){
+   .portfolio__container{
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+   }
+}
+
+/* Making it resposive for mobile */
+@media screen and (max-width: 600px){
+   .portfolio__container{
+    grid-template-columns: 1fr;
+    gap: 1rem;
+   }
+}
+
