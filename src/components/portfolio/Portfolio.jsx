@@ -1,5 +1,6 @@
 import React from 'react'
 import './portfolio.css'
+import IMG1 from '../../assets/Flashcards-pic.png'
 
 export const Portfolio = () => {
   return (
@@ -8,9 +9,9 @@ export const Portfolio = () => {
       <h2>Portfolio</h2>
 
       <div className='container portfolio__container'>
-        <article className='portfolio__item'>
+      <article className='portfolio__item'>
           <div className='portfolio__item-image'>
-            <img src="" alt="" />
+            <img src={IMG1} alt="" />
           </div>
           <h3>This is a protfolio item title</h3>
           <a href='#' className='btn btn-primary'>View Code</a>
@@ -19,47 +20,34 @@ export const Portfolio = () => {
 
         <article className='portfolio__item'>
           <div className='portfolio__item-image'>
-            <img src="" alt="" />
+            <img src={IMG1} alt="" />
           </div>
           <h3>This is a protfolio item title</h3>
           <a href='#' className='btn btn-primary'>View Code</a>
           <a href='#' className='btn btn-primary'>Live Demo</a>
         </article>
 
-
         <article className='portfolio__item'>
           <div className='portfolio__item-image'>
-            <img src="" alt="" />
+            <img src={IMG1} alt="" />
           </div>
           <h3>This is a protfolio item title</h3>
           <a href='#' className='btn btn-primary'>View Code</a>
           <a href='#' className='btn btn-primary'>Live Demo</a>
         </article>
 
-
         <article className='portfolio__item'>
           <div className='portfolio__item-image'>
-            <img src="" alt="" />
+            <img src={IMG1} alt="" />
           </div>
           <h3>This is a protfolio item title</h3>
           <a href='#' className='btn btn-primary'>View Code</a>
           <a href='#' className='btn btn-primary'>Live Demo</a>
         </article>
 
-
         <article className='portfolio__item'>
           <div className='portfolio__item-image'>
-            <img src="" alt="" />
-          </div>
-          <h3>This is a protfolio item title</h3>
-          <a href='#' className='btn btn-primary'>View Code</a>
-          <a href='#' className='btn btn-primary'>Live Demo</a>
-        </article>
-
-
-        <article className='portfolio__item'>
-          <div className='portfolio__item-image'>
-            <img src="" alt="" />
+            <img src={IMG1} alt="" />
           </div>
           <h3>This is a protfolio item title</h3>
           <a href='#' className='btn btn-primary'>View Code</a>
