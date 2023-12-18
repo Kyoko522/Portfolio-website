@@ -74,9 +74,21 @@ transition: var(--transition);
 }
 
 .about__content p {
+    margin-top: 2rem;
     margin-bottom: 2rem;
     color: var(--color-light);
+    align-items: center;
 }
+
+.about__text {
+    text-align: center; /* Center-align the text */
+}
+
+.about__text .btn {
+    display: inline-block; /* Make the button a block element */
+    margin-top: 1rem; /* Adjust the top margin as needed */
+}
+
 
 /* Making it resposive for tablets */
 @media screen and (max-width: 1028px){
