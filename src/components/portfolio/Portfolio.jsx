@@ -61,7 +61,7 @@ export const Portfolio = () => {
                 View Code
               </a>
               <a href={demo} className='btn btn-primary'>
-                Live Demo
+                Live Demol
               </a>
             </div>
           </article>

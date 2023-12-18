@@ -48,12 +48,9 @@ transition: var(--transition);
     background: var(--color-background-variant);
     cursor: default;
 }
-/* .about__card:hover .about__icon {
-    color: var(--color-primary)
-} */
 
 .about__icon {
-    color: var(--color-light);
+    /* color: black !important; */
     padding: 3rem 0 0 0;
     font-size: 1.4rem;
     margin-bottom: 1rem;

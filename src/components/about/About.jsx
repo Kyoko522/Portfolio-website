@@ -4,7 +4,10 @@ import Sheel from '../../assets/sheel.png';
 import Sheel2 from '../../assets/sheel2.png';
 import Sheel3 from '../../assets/sheel3.png';
 import Sheel4 from '../../assets/sheel4.png';
-import {FaAward} from 'react-icons/fa'
+import { MdOutlineComputer } from "react-icons/md";
+import { MdSchool } from "react-icons/md";
+import { FaCode } from "react-icons/fa";
+
 
 export const About = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -34,18 +37,19 @@ export const About = () => {
         <div className='about__content'>
           <div className='about__cards'>
             <article className='about__card'>
-              <FaAward className='about__icon'/>
+              <MdSchool className='about__icon'/>
               <h5>School</h5>
-              <small>Tronto Metropolitain University</small>
+              <small>Toronto Metropolitan University</small>
               <small>3.7+ CGPA</small>
               </article>
               <article className='about__card'>
-              <FaAward className='about__icon'/>
+              <MdOutlineComputer className='about__icon'/>
               <h5>Experience</h5>
               <small>4 Years</small>
+              <small>Java Python JavaScript</small>
               </article>
               <article className='about__card'>
-              <FaAward className='about__icon'/>
+              <FaCode className='about__icon'/>
               <h5>Projects</h5>
               <small>10+</small>
               </article>

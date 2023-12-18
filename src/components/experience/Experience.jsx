@@ -65,7 +65,7 @@ export const Experience = () => {
           <article className='experience__details'>
               <BsPatchCheckFill className='experience__details-icon'/>
               <div>
-              <h4>HTML</h4>
+              <h4>Computer Science I (Python)</h4>
               <small className='text-light'>Experienced</small>
               </div>
             </article>
@@ -73,7 +73,7 @@ export const Experience = () => {
             <article className='experience__details'>
               <BsPatchCheckFill className='experience__details-icon'/>
               <div>
-              <h4>CSS</h4>
+              <h4>Computer Science II (Java)</h4>
               <small className='text-light'>Experienced</small>
               </div>
             </article>
@@ -81,7 +81,7 @@ export const Experience = () => {
             <article className='experience__details'>
               <BsPatchCheckFill className='experience__details-icon'/>
               <div>
-              <h4>JavaScript</h4>
+              <h4>Computer Organization I</h4>
               <small className='text-light'>Experienced</small>
               </div>
             </article>
@@ -89,7 +89,7 @@ export const Experience = () => {
             <article className='experience__details'>
               <BsPatchCheckFill className='experience__details-icon'/>
               <div>
-              <h4>BootStrap</h4>
+              <h4>Computer Organization II</h4>
               <small className='text-light'>Experienced</small>
               </div>
             </article>
@@ -97,7 +97,7 @@ export const Experience = () => {
             <article className='experience__details'>
               <BsPatchCheckFill className='experience__details-icon'/>
               <div>
-              <h4>TailWind</h4>
+              <h4>Data Structures and Algorithm</h4>
               <small className='text-light'>Experienced</small>
               </div>
             </article>
@@ -105,7 +105,7 @@ export const Experience = () => {
             <article className='experience__details'>
               <BsPatchCheckFill className='experience__details-icon'/>
               <div>
-              <h4>React</h4>
+              <h4>Introduction to Robotics</h4>
               <small className='text-light'>Experienced</small>
               </div>
             </article>
