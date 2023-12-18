@@ -1,13 +1,13 @@
 import React from 'react'
 import './portfolio.css'
-import IMG1 from '../../assets/Flashcards-pic.png'
+import IMG1 from '../../assets/portfolio.png'
 
 
 const data = [
   {
     id: 1,
     image: IMG1,
-    title: 'FlshCards using python',
+    title: 'Perssonal Portfolio',
     github: 'http://github.com',
     demo: 'http://github.com'
   },

@@ -36,17 +36,18 @@ export const About = () => {
             <article className='about__card'>
               <FaAward className='about__icon'/>
               <h5>School</h5>
-              <small>2 Years</small>
+              <small>Tronto Metropolitain University</small>
+              <small>3.7+ CGPA</small>
               </article>
               <article className='about__card'>
               <FaAward className='about__icon'/>
               <h5>Experience</h5>
-              <small>2 Years</small>
+              <small>4 Years</small>
               </article>
               <article className='about__card'>
               <FaAward className='about__icon'/>
               <h5>Projects</h5>
-              <small>10 plus</small>
+              <small>10+</small>
               </article>
 
           </div>
@@ -54,7 +55,7 @@ export const About = () => {
           <p>
           I'm Sheel Patel, a dedicated and versatile Computer Science student at Toronto Metropolitan University. Proficient in programming languages like Python, Java, and more, with a GPA of 3.7+. Ready to excel in computer science and contribute to innovative projects and teams. Explore my work below!
           </p>
-          <a href='#content' className='btn btn-primary'>Let's Talk</a> 
+          <a href='#contact' className='btn btn-primary'>Let's Talk</a> 
           </div>
         </div>
 

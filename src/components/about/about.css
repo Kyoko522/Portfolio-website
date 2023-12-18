@@ -66,6 +66,7 @@ transition: var(--transition);
 .about__card small {
     font-size: 0.7rem;
     color: var(--color-light);
+    display: block;
 }
 
 .about__content {
@@ -78,6 +79,7 @@ transition: var(--transition);
     margin-bottom: 2rem;
     color: var(--color-light);
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .about__text {
