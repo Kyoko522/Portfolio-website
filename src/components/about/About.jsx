@@ -29,7 +29,7 @@ export const About = () => {
 
         <div className= 'about__me' onClick={handleImageClick}>
           <div className= 'about__me-image'>
-            <img src={images[currentImageIndex]} alt={`Sheel About Image ${currentImageIndex + 1}`} />
+            <img src={images[currentImageIndex]} alt={`Sheel About ${currentImageIndex + 1}`} />
             {/* <img src={Sheel} alt='Sheel About Image' /> */}
           </div>
         </div>
