@@ -10,11 +10,6 @@
     gap: 2.5rem;
 }
 
-a {
-    margin: 0 10px;
-    align-items: center;
-}
-
 .portfolio__items {
     background: var(--color-background-variant);
     padding: 1.3rem;
@@ -47,16 +42,23 @@ a {
     margin: 1rem;
 }
 
-.portfolio__items-cta {
+.portfolio__item-cta {
     display: flex;
     justify-content: center;
-    margin-top: 1rem; /* Adjust margin as needed */
+    align-items: center;
     margin: 2rem;
 }
 
-.portfolio__project-img {
-    height: 400px;
-    width: 400px;
+a{
+margin: 0 10px;
+}
+
+.portfolio__item-image {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Making it responsive for tablets */
