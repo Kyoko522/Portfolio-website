@@ -55,13 +55,13 @@ export const Portfolio = () => {
             <div className='portfolio__item-image'>
               <img className='portfolio__project-img' src={image} alt={title} />
             </div>
-            <h3>{title}</h3>
+            <h3 className='portfolio__item-title'>{title}</h3>
             <div className='portfolio__item-cta'>
               <a href={github} className='btn btn-primary'>
                 View Code
               </a>
               <a href={demo} className='btn btn-primary'>
-                Live Demol
+                Live Demo
               </a>
             </div>
           </article>
