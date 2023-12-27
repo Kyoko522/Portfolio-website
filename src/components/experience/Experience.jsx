@@ -17,43 +17,48 @@ export const Experience = () => {
           <article className='experience__details'>
               <BsPatchCheckFill className='experience__details-icon'/>
               <div>
-              <h4>HTML</h4>
-              <small className='text-light'>Experienced</small>
+              <h4 className='text-light'>HTML</h4>
+              <small className='text-light-s'>Experienced</small>
               </div>
             </article>
 
             <article className='experience__details'>
               <BsPatchCheckFill className='experience__details-icon'/>
               <div>
-              <h4>CSS</h4>
-              <small className='text-light'>Experienced</small>
+              <h4 className='text-light'>CSS</h4>
+              <small className='text-light-s'>Experienced</small>
               </div>
-            </article>
-
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon'/>
-              <h4>JavaScript</h4>
-              <small className='text-light'>Experienced</small>
-            </article>
-
-            <article className='experience__details'>
-              <BsPatchCheckFill className='experience__details-icon'/>
-              <h4>BootStrap</h4>
-              <small className='text-light'>Experienced</small>
             </article>
 
             <article className='experience__details'>
               <BsPatchCheckFill className='experience__details-icon'/>
               <div>
-              <h4>TailWind</h4>
-              <small className='text-light'>Experienced</small>
+              <h4 className='text-light'>JavaScript</h4>
+              <small className='text-light-s'>Experienced</small>
               </div>
             </article>
 
             <article className='experience__details'>
               <BsPatchCheckFill className='experience__details-icon'/>
-              <div><h4>React</h4>
-              <small className='text-light'>Experienced</small>
+              <div>
+              <h4 className='text-light'>BootStrap</h4>
+              <small className='text-light-s'>Experienced</small>
+              </div>
+            </article>
+
+            <article className='experience__details'>
+              <BsPatchCheckFill className='experience__details-icon'/>
+              <div>
+              <h4 className='text-light'>TailWind</h4>
+              <small className='text-light-s'>Experienced</small>
+              </div>
+            </article>
+
+            <article className='experience__details'>
+              <BsPatchCheckFill className='experience__details-icon'/>
+              <div>
+                <h4 className='text-light'>React</h4>
+              <small className='text-light-s'>Experienced</small>
               </div>
             </article>
           </div>
@@ -65,48 +70,48 @@ export const Experience = () => {
           <article className='experience__details'>
               <BsPatchCheckFill className='experience__details-icon'/>
               <div>
-              <h4>Computer Science I (Python)</h4>
-              <small className='text-light'>Experienced</small>
+              <h4 className='text-light'>Computer Science I (Python)</h4>
+              <small className='text-light-s'>Experienced</small>
               </div>
             </article>
 
             <article className='experience__details'>
               <BsPatchCheckFill className='experience__details-icon'/>
               <div>
-              <h4>Computer Science II (Java)</h4>
-              <small className='text-light'>Experienced</small>
+              <h4 className='text-light'>Computer Science II (Java)</h4>
+              <small className='text-light-s'>Experienced</small>
               </div>
             </article>
 
             <article className='experience__details'>
               <BsPatchCheckFill className='experience__details-icon'/>
               <div>
-              <h4>Computer Organization I</h4>
-              <small className='text-light'>Experienced</small>
+              <h4 className='text-light'>Computer Organization I</h4>
+              <small className='text-light-s'>Experienced</small>
               </div>
             </article>
 
             <article className='experience__details'>
               <BsPatchCheckFill className='experience__details-icon'/>
               <div>
-              <h4>Computer Organization II</h4>
-              <small className='text-light'>Experienced</small>
+              <h4 className='text-light'>Computer Organization II</h4>
+              <small className='text-light-s'>Experienced</small>
               </div>
             </article>
 
             <article className='experience__details'>
               <BsPatchCheckFill className='experience__details-icon'/>
               <div>
-              <h4>Data Structures and Algorithm</h4>
-              <small className='text-light'>Experienced</small>
+              <h4 className='text-light'>Data Structures and Algorithm</h4>
+              <small className='text-light-s'>Experienced</small>
               </div>
             </article>
 
             <article className='experience__details'>
               <BsPatchCheckFill className='experience__details-icon'/>
               <div>
-              <h4>Introduction to Robotics</h4>
-              <small className='text-light'>Experienced</small>
+              <h4 className='text-light'>Introduction to Robotics</h4>
+              <small className='text-light-s'>Experienced</small>
               </div>
             </article>
           </div>
