@@ -10,26 +10,8 @@ export const Contacts = () => {
 
       <div className='container contact_container'>
         <div className='contact_options'>
-          <article className='contact_option'>
-            {/* <BiLogoGmail className='contact_option-icon'/> */}
-            <h4>Email</h4>
-            <h5>sheelpatel5252@gmail.com</h5>
-            <a href="mailto:sheelpatel5252@gmail.com" target='_blank' rel="noreferrer">Send a message</a>
-          </article>
-
-          <article className='contact_option'>
-            {/* <BiLogoGmail className='contact_option-icon'/> */}
-            <h4>Messanger</h4>
-            <h5>sheelpatel52</h5>
-            <a href="http://m.me/sheel.patel.1217" target='_blank' rel="noreferrer">Send a message</a>
-          </article>
-
-          <article className='contact_option'>
-            {/* <BiLogoGmail className='contact_option-icon'/> */}
-            <h4>WhatsApp</h4>
-            <h5>sheelpatel</h5>
-            <a href="http://api.whatsapp.com/send?phone+16478704641" target='_blank' rel="noreferrer">Send a message</a>
-          </article>
+    
+          
           
         </div>
     {/* END OF CONTACT OPTIONS */}
