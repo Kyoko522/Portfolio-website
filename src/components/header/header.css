@@ -79,4 +79,11 @@ header{
     .header__socials, .scroll_down {
         display: none;
     }
+
+    h2{
+        padding-bottom: 3rem;
+    }
+    .about__content {
+        margin-top: 2rem;
+    }
 }
