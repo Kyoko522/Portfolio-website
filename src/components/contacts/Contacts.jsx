@@ -14,22 +14,22 @@ export const Contacts = () => {
            <article className='contact__option'>
             {/* <BiLogoGmail className='contact_option-icon'/> */}
             <h4>Email</h4>
-            <h5>sheelpatel5252@gmail.com</h5>
+            <h5>sheelpatel5252</h5>
             <a href="mailto:sheelpatel5252@gmail.com" target='_blank' rel="noreferrer">Send a message</a>
           </article>
 
-          <article className='contact_option'>
+          <article className='contact__option'>
             {/* <BiLogoGmail className='contact_option-icon'/> */}
             <h4>LinkedIn</h4>
-            <h5>sheelpatel52</h5>
-            <a href="http:linkin.com" target='_blank' rel="noreferrer">Send a message</a>
-          </article>
+            <h5>Sheel Patel</h5>
+            <a href="https://www.linkedin.com/in/sheel-patel-1212a0262/?originalSubdomain=ca" target='_blank' rel="noreferrer">Send a message</a>
+          </article> 
 
           <article className='contact__option'>
             {/* <BiLogoGmail className='contact_option-icon'/> */}
             <h4>Instagram</h4>
             <h5>sheel_52</h5>
-            <a href="http://api.whatsapp.com/send?phone+16478704641" target='_blank' rel="noreferrer">Send a message</a>
+            <a href="https://www.instagram.com/sheel_52/" target='_blank' rel="noreferrer">Send a message</a>
           </article> 
           
           
