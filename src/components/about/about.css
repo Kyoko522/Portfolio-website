@@ -54,6 +54,7 @@ transition: var(--transition);
     padding: 3rem 0 0 0;
     font-size: 1.4rem;
     margin-bottom: 1rem;
+    color: beige;
 }
 
 .about__card h5{

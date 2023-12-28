@@ -5,7 +5,7 @@ import Sheel2 from '../../assets/sheel2.png';
 import Sheel3 from '../../assets/sheel3.png';
 import Sheel4 from '../../assets/sheel4.png';
 import { MdOutlineComputer } from "react-icons/md";
-import { MdSchool } from "react-icons/md";
+import { FaSchool } from "react-icons/fa6";
 import { FaCode } from "react-icons/fa";
 
 
@@ -37,7 +37,7 @@ export const About = () => {
         <div className='about__content'>
           <div className='about__cards'>
             <article className='about__card'>
-              <MdSchool className='about__icon'/>
+              <FaSchool className='about__icon'/>
               <h5>School</h5>
               <small>Toronto Metropolitan University</small>
               <small>3.7+ CGPA</small>
