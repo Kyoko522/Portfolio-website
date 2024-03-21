@@ -12,11 +12,11 @@
 
 :root{
     --color-background: #1f1f38;
-    --color-background-variant:#7266A1;
+    --color-background-variant:#7A52CC;
     --color-secondary: #00C9A7;
     --color-primary: #845EC2;
-    --color-primary-lighter: #F3c5FF;
-    --color-primary-variant: #2f696d;
+    --color-primary-lighter: #A3A3CC;
+    --color-primary-darker: #272341;
     --color-white: #fff;
     --color-light: #FEFEDF;
 

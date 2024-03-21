@@ -1,18 +1,18 @@
-.container .contact_container {
+.container.contact__container {
     width: 58%;
     display: grid;
     grid-template-columns: 30% 58%;
     gap: 12%;
 }
 
-.contact_options {
+.contact__options {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
 }
 
-.contact_option{
-    background: var(--color--background--variant);
+.contact__option{
+    background: var(--color-background-variant);
     padding: 1.2rem;
     border-radius: 1.2rem;
     text-align: center;
@@ -20,20 +20,21 @@
     transition: var(--transition);
 }
 
-.contact_option:hover{
+.contact__option:hover{
     background-color: transparent;
     border-color: var(--color-primary--variant);
 }
 
-.cotact_option-icon{
+.cotact__option-icon{
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
 
-.contact_option a {
+.contact__option a {
     margin-top: 0.7rem;
     display: inline-block;
     font-size: 0.8rem;
+    color: var(--color-primary-darker);
 }
 
 
@@ -49,7 +50,25 @@ width: 100%;
 padding: 1.5rem;
 border-radius: 0.5rem;
 background: transparent;
-border: 2px solid var(--color-primary--variant);
+border: 2px solid var(--color-primary-lighter);
 resize: none;
-color: var(--color-light);
+color: var(--color-primary-lighter);
 }
+
+/* Making it resposive for tablets */
+@media screen and (max-width: 1028px){
+    .cotainer.contact__container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 1rem;
+    }
+}
+
+/* Making it resposive for mobile */
+@media screen and (max-width: 600px){
+   .container.contact__container {
+        grid-template-columns: 1fr;
+        width: var(--container-width-sm);
+   }
+}
+

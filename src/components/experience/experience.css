@@ -21,6 +21,10 @@
 .experience__container > div > h3 {
     text-align: center;
     margin-bottom: 2rem;
+    color: var(--color-primary-darker);
+}
+
+.experience__container >div:hover > h3 {
     color: var(--color-primary);
 }
 
@@ -37,8 +41,26 @@
 
 .experience__details-icon {
     margin-top: 6px;
+    color: var(--color-primary-darker);
+}
+
+.experience__container > div:hover .experience__details-icon {
     color: var(--color-primary);
 }
+
+.text-light {
+    color: var(--color-primary-darker);
+    padding-right: 1rem;
+}
+
+.text-light-s {
+    color: var(--color-primary-lighter);
+}
+
+.experience__container > div:hover .text-light{
+    color: var(--color-white);
+}
+
 
 /* Making it resposive for tablets */
 @media screen and (max-width: 1028px){
