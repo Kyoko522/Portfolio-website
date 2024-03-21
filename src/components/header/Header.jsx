@@ -8,7 +8,7 @@ export const Header = () => {
   return (
     <header>
       <div className="container header__container">
-        <h5>Hello I'm</h5>
+        <h5>Hello I&apos;m</h5>
         <h1>Sheel Patel</h1>
         <h5 className='text'>Fullstack Developer and Mobile Developer</h5>
         <CTA />
