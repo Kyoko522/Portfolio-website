@@ -2,7 +2,6 @@ import React from 'react';
 import './header.css';
 import CTA from './CTA';
 import HeaderSocials from './headerSocials';
-import Sheel from '../../assets/sheelmain.png';
 
 export const Header = () => {
   return (
@@ -14,7 +13,7 @@ export const Header = () => {
         <CTA />
         <HeaderSocials />
         <div className="sheel_img">
-          <img src={Sheel} alt='Sheel Patel' />
+          <img src={`/assets/sheelmain.png`} alt='Sheel Patel' />
         </div>
         <a href='#about' className='scroll_down'>Scroll Down</a>
       </div>

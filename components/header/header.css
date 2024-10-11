@@ -46,7 +46,8 @@ header{
     margin-top: 4rem;
     border-radius: 12rem 12rem 0 0;
     overflow: hidden;
-    padding: 5rem 1.5rem 1.5rem 1.5rem;   
+    padding: 5rem 1.5rem 1.5rem 1.5rem;
+    display: none;
 }
 
 .text{
@@ -85,5 +86,11 @@ header{
     }
     .about__content {
         margin-top: 2rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .sheel_img {
+        display: block;
     }
 }
