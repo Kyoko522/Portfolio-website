@@ -1,5 +1,6 @@
 import React from 'react'
 import './portfolio.css'
+import Image from 'next/image'
 
 const data = [
   {
@@ -53,7 +54,7 @@ export const Portfolio = () => {
         {data.map(({ id, image, title, github, demo }) => (
           <article className='portfolio__item' key={id}>
             <div className='portfolio__item-image'>
-              <img className='portfolio__project-img' src={image} alt={title} />
+              <Image className='portfolio__project-img' src={image} alt={title} width='1000' height='1000'/>
             </div>
             <h3 className='portfolio__item-title'>{title}</h3>
             <div className='portfolio__item-cta'>

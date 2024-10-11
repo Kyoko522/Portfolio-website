@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import React, { useState } from 'react'
 import './about.css'
 import { MdOutlineComputer } from "react-icons/md";
@@ -25,7 +26,7 @@ export default function About() {
 
                 <div className='about__me' onClick={handleImageClick}>
                     <div className='about__me-image'>
-                        <img src={images[currentImageIndex]} alt={`Sheel About ${currentImageIndex + 1}`} />
+                        <Image src={images[currentImageIndex]} alt={`Sheel About ${currentImageIndex + 1}`} width='1000' height='1000'/>
                         {/* <img src={Sheel} alt='Sheel About Image' /> */}
                     </div>
                 </div>
