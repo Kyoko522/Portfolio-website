@@ -14,7 +14,8 @@ export const Header = () => {
         <CTA />
         <HeaderSocials />
         <div className="sheel_img">
-          <Image src={`/assets/sheelmain.png`} alt='Sheel Patel' weight='1000' height='1000' width='1000'/>
+        <Image src="/assets/sheelmain.png" alt="Sheel Patel" width={1364} height={2630} objectFit='contain' priority layout='intrinsic'/> 
+        {/* Demension are set the the pixel of the image */}
         </div>
         <a href='#about' className='scroll_down'>Scroll Down</a>
       </div>

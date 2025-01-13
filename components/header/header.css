@@ -50,6 +50,7 @@ header{
     display: none;
 }
 
+
 .text{
     color: var(--color-primary-lighter);
 }
@@ -70,6 +71,10 @@ header{
     .header{
        height: 68vh;
     }
+
+    .sheel_img{
+        max-width: 25rem;
+    }
 }
 
 /* Making it resposive for mobile */
@@ -79,6 +84,9 @@ header{
     }
     .header__socials, .scroll_down {
         display: none;
+    }
+    .sheel_img{
+        max-width: 18rem;
     }
 
     h2{
