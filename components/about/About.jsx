@@ -8,7 +8,7 @@ import { FaCode } from "react-icons/fa";
 
 export default function About() {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const images = [`/assets/sheel.png`, `/assets/sheel2.png`, `/assets/sheel3.png`, `/assets/sheel4.png`]; // Adding more images
+    const images = [`/assets/sheel.png`, `/assets/sheel2.png`, `/assets/sheel3.png`]; // Adding more images
 
     const handleImageClick = () => {
         console.log('Image clicked');
@@ -24,7 +24,7 @@ export default function About() {
 
                 <div className='about__me' onClick={handleImageClick}>
                     <div className='about__me-image'>
-                        <Image src={images[currentImageIndex]} alt={`Sheel About ${currentImageIndex + 1}`} width='1000' height='1000'/>
+                        <Image src={images[currentImageIndex]} alt={`Sheel About ${currentImageIndex + 1}`} width={3024} height={4032}/>
                         {/* <img src={Sheel} alt='Sheel About Image' /> */}
                     </div>
                 </div>

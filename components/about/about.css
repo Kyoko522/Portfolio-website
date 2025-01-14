@@ -2,25 +2,34 @@
     display: grid;
     grid-template-columns: 35% 50%;
     gap: 15%;
+    align-items: center; /* Center-align vertically */
 }
 
 .about__me {
     width: 100%;
-    aspect-ratio: 1/1;
+    max-width: 300px; /* Limit the maximum width */
+    aspect-ratio: 3/4; /* Match the aspect ratio of the images (3024x4032 = 3:4) */
     border-radius: 2rem;
-    background: linear-gradient(45deg,
-            transparent,
-            var(--color-primary),
-            transparent);
+    background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
     display: grid;
     place-items: center;
+    margin: 0 auto; /* Center-align horizontally */
+    overflow: visible; /* hiddwn -> Prevent overflow for consistent sizing */
+                       /* visibale -> let the additional part that is overlapping to be seen  */
 }
 
 .about__me-image {
+    width: 100%; /* Fill the parent container */
+    height: 100%; /* Match the height to the container */
     border-radius: 2rem;
     overflow: hidden;
     transform: rotate(10deg);
-    transition: var(--transition);
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.about__me-image img {
+    width: 100%; /* Scale the image responsively */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .about__me-image:hover {
@@ -37,7 +46,7 @@
     background: var(--color-primary);
     border: 1px solid transparent;
     border-radius: 1rem;
-    padding: 2 rem;
+    padding: 2rem;
     text-align: center;
 }
 
@@ -49,9 +58,9 @@
 }
 
 .about__icon {
-   color: beige;
-   margin: 5px;
-   margin-top: 10px;
+    color: beige;
+    margin: 5px;
+    margin-top: 10px;
 }
 
 .about__card h5 {
@@ -66,40 +75,40 @@
 
 .about__content {
     margin: 2rem 0 2.6rem;
-    color: var();
 }
 
 .about__content p {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin: 1rem 0;
     color: var(--color-light);
-    align-items: center;
-    margin-bottom: 10px;
+    text-align: justify;
 }
 
 .about__text {
     text-align: center;
-    /* Center-align the text */
 }
 
 .about__text .btn {
     display: inline-block;
-    /* Make the button a block element */
     margin-top: 1rem;
-    /* Adjust the top margin as needed */
 }
 
-
-/* Making it resposive for tablets */
+/* Making it responsive for tablets */
 @media screen and (max-width: 1028px) {
     .about__container {
         grid-template-columns: 1fr;
-        gap: 0;
+        gap: 2rem;
+        text-align: center;
     }
 
     .about__me {
-        width: 50%;
+        width: 60%;
+        max-width: 250px;
         margin: 2rem auto 4rem;
+    }
+
+    .about__me-image {
+        height: auto; /* Allow dynamic height */
+        max-width: 100%;
     }
 
     .about__content p {
@@ -107,11 +116,17 @@
     }
 }
 
-/* Making it resposive for mobile */
+/* Making it responsive for mobile */
 @media screen and (max-width: 600px) {
     .about__me {
-        width: 65%;
+        width: 70%;
+        max-width: 200px;
         margin: 0 auto 3rem;
+    }
+
+    .about__me-image {
+        height: auto;
+        max-width: 100%;
     }
 
     .about__cards {
