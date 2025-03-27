@@ -10,7 +10,8 @@ const data = [
     title: 'EcoDex',
     github: 'https://github.com/Kyoko522/EcoDex',
     demo: 'link',
-    description: 'EcoDex is a web application that allows users to search for and view information about various plant species. The application uses the Plant API to fetch data about plants, including their scientific names, common names, and images. Users can search for plants by their common or scientific names, and view detailed information about each plant.'
+    description: 'EcoDex is a web application that allows users to search for and view information about various plant species. The application uses the Plant API to fetch data about plants, including their scientific names, common names, and images. Users can search for plants by their common or scientific names, and view detailed information about each plant.', 
+    moreOptions: true,
   },
   {
     id: 1,
@@ -73,7 +74,7 @@ export const Portfolio = () => {
       <h2>Portfolio</h2>
 
       <div className="portfolio__container">
-        {data.map(({ id, image, title, github, demo, description }) => (
+        {data.map(({ id, image, title, github, demo, description, moreOptions }) => (
           <div key={id}>
             {/* Flip card */}
             <div className="portfolio__card">
@@ -84,7 +85,7 @@ export const Portfolio = () => {
                   </div>
                   <h3 className="portfolio__item-title">{title}</h3>
                 </div>
-                {/* Back side of the card */}
+
                 <div className="portfolio__card-back">
                   <h3>About the Project</h3>
                   <p>{description}</p>
@@ -92,18 +93,21 @@ export const Portfolio = () => {
               </div>
             </div>
 
-            {/* Buttons outside the flip */}
+            {/* Buttons outside the flipping card */}
             <div className="portfolio__item-cta">
               <a href={github} className="btn" target="_blank" rel="noopener noreferrer">GitHub</a>
               {demo && (
                 <a href={demo} className="btn btn-primary" target="_blank" rel="noopener noreferrer">Live Demo</a>
+              )}
+              {moreOptions && (
+                <button className="btn btn-primary" target='_blank' rel='noopener noreferrer'>More</button>
               )}
             </div>
           </div>
         ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default Portfolio
