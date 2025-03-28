@@ -42,7 +42,7 @@ export default function About() {
               <FaSchool className="about__icon" />
               <h5>University</h5>
               <small>Toronto Metropolitan University</small>
-              <small>3.7+ CGPA</small>
+              <small>3.7 CGPA</small>
             </article>
 
             <article className="about__card">
