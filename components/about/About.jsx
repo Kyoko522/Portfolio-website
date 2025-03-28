@@ -64,7 +64,7 @@ export default function About() {
                         I thrive in collaborative environments where ideas can be openly discussed and tested. Gaming is another interest of mine - both playing and developing games that create engaging experiences.
                         </p>
                         <p>
-                        My approach to computer science is versatile; I enjoy tackling different aspects of projects and paying attention to the details that make technology work smoothly.
+                        My approach to computer science is versatile; I enjoy tackling different aspects of projects and paying attention to the details that make technology work smoothly. (Most times at least!)
                         </p>
                         <p>
                         Welcome to my site - I'm glad you're here!
