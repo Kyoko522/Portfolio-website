@@ -4,15 +4,15 @@ import Image from 'next/image'
 
 const data = [
   //TODO: add the EcoDex application here as soon as it's hosted on vercel
-  {
-    id: 0,
-    image: ``,
-    title: 'EcoDex',
-    github: 'https://github.com/Kyoko522/EcoDex',
-    demo: 'link',
-    description: 'EcoDex is a web application that allows users to search for and view information about various plant species. The application uses the Plant API to fetch data about plants, including their scientific names, common names, and images. Users can search for plants by their common or scientific names, and view detailed information about each plant.', 
-    options: '/projects/ecodex',
-  },
+  // {
+  //   id: 0,
+  //   image: ``,
+  //   title: 'EcoDex',
+  //   github: 'https://github.com/Kyoko522/EcoDex',
+  //   demo: 'link',
+  //   description: 'EcoDex is a web application that allows users to search for and view information about various plant species. The application uses the Plant API to fetch data about plants, including their scientific names, common names, and images. Users can search for plants by their common or scientific names, and view detailed information about each plant.', 
+  //   options: '/projects/ecodex',
+  // },
   {
     id: 1,
     image: `/assets/food_management.png`,
