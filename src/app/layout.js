@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import 'katex/dist/katex.min.css'
 import "./globals.css";
 
 const geistSans = localFont({

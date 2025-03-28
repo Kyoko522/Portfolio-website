@@ -1,0 +1,8 @@
+-  Memory tables keep track of the main and virtual memory
+- this includes both the memory reserved for the OS and the memory made available for the processes.
+- Processes are maintained on secondary memeory using virtual memory or swapping 
+- Memory tables include the following information
+	- The allocation of main memory to processes 
+	- The allocation of secondary memory to processes 
+	- Any protection attributes of blocks of main or virtual memory, such as which processes may access certain shared memory regions
+	-  Any information needed to manage virtual memory 

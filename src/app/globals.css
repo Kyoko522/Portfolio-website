@@ -112,6 +112,22 @@ img{
     object-fit: cover;
 }
 
+/* For the project side Screens */
+.title-center {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  
+.disclosure-note {
+    font-size: 0.9rem;
+    color: #555;
+    background-color: #f9f9f9;
+    border-left: 4px solid #ccc;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
 
 /* Making it resposive for tablets */
 @media screen and (max-width: 1028px){

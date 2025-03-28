@@ -1,0 +1,3 @@
+- Only bring pages into main memory when a reference is made to a location on the page 
+- Many page faults when process is first started
+- principle of locality suggests that as more and more pages are brought in, most future reference will be to pages that have recently been brought in, and page faults should drop to a very low level

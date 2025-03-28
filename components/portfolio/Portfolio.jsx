@@ -4,19 +4,21 @@ import Image from 'next/image'
 
 const data = [
   //TODO: add the EcoDex application here as soon as it's hosted on vercel
-  // {
-  //   id: 0,
-  //   image: ``,
-  //   title: 'EcoDex',
-  //   github: 'https://github.com/Kyoko522/EcoDex',
-  //   demo: 'link'
-  // },
+  {
+    id: 0,
+    image: ``,
+    title: 'EcoDex',
+    github: 'https://github.com/Kyoko522/EcoDex',
+    demo: 'link',
+    description: 'EcoDex is a web application that allows users to search for and view information about various plant species. The application uses the Plant API to fetch data about plants, including their scientific names, common names, and images. Users can search for plants by their common or scientific names, and view detailed information about each plant.', 
+    options: '/projects/ecodex',
+  },
   {
     id: 1,
     image: `/assets/food_management.png`,
     title: 'Food Management App',
     github: 'https://github.com/Kyoko522/Food-Management',
-    description: 'An initiative by the Practical Application of Computer Science (PACS) club in collaboration with VIRO. This Android application aims to reduce food waste by connecting event organizers with students and club members interested in receiving surplus food after events. The app facilitates a sustainable solution, ensuring that excess food doesn\'t go to waste and benefits those in need.'
+    description: 'An initiative by the Practical Application of Computer Science (PACS) club in collaboration with VIRO. This Android application aims to reduce food waste by connecting event organizers with students and club members interested in receiving surplus food after events. The app facilitates a sustainable solution, ensuring that excess food doesn\'t go to waste and benefits those in need.',
   },
   {
     id: 2,
@@ -56,6 +58,13 @@ const data = [
     github: 'https://github.com/Kyoko522/Flash_Cards',
     description: 'Python Flashcards is a command-line application that helps users learn Python programming concepts through flashcards. The user can view a list of flashcards, add new flashcards, delete flashcards, and quiz themselves on the flashcards. The application uses a JSON file to store the flashcards, which allows the user to save their progress between sessions.'
   },
+  {
+    id: 7,
+    image: `/assets/Chess.png`,
+    title: 'Chess',
+    github: 'https://github.com/Kyoko522/Chess',
+    description: 'Chess is a JFrame application that allows two players to play a game of chess. The game board is displayed, and the players take turns making moves. The application uses object-oriented programming principles to represent the chess board, pieces, and players. The player can move pieces, capture opponents, and checkmate the opponent. Currently still under work attempting to implement ai functionality with Minimax algorithm.', 
+  },
 ]
 
 export const Portfolio = () => {
@@ -64,49 +73,35 @@ export const Portfolio = () => {
       <h5>My Recent Projects</h5>
       <h2>Portfolio</h2>
 
-      <div className="container portfolio__container">
-        {data.map(({ id, image, title, github, demo, description }) => (
-          <div className="portfolio__card" key={id}>
-            <div className="portfolio__card-inner">
-              {/* Front Side */}
-              <div className="portfolio__card-front">
-                <div className="portfolio__item-image">
-                  <Image
-                    className="portfolio__project-img"
-                    src={image}
-                    alt={title}
-                    width="1000"
-                    height="1000"
-                  />
+      <div className="portfolio__container">
+        {data.map(({ id, image, title, github, demo, description, options }) => (
+          <div key={id}>
+            {/* Flip card */}
+            <div className="portfolio__card">
+              <div className="portfolio__card-inner">
+                <div className="portfolio__card-front">
+                  <div className="portfolio__item-image">
+                    <img src={image} alt={title} />
+                  </div>
+                  <h3 className="portfolio__item-title">{title}</h3>
                 </div>
-                <h3 className="portfolio__item-title">{title}</h3>
-                <div className="portfolio__item-cta">
-                  <a href={github} target="_blank" className="btn btn-primary">
-                    View Code
-                  </a>
-                  {demo && (
-                    <a href={demo} target="_blank" className="btn btn-primary">
-                      Live Demo
-                    </a>
-                  )}
-                </div>
-              </div>
 
-              {/* Back Side */}
-              <div className="portfolio__card-back">
-                <h3>About the Project</h3>
-                <p>{description}</p>
-                <div className="portfolio__item-cta">
-                  <a href={github} target="_blank" className="btn btn-primary">
-                    View Code
-                  </a>
-                  {demo && (
-                    <a href={demo} target="_blank" className="btn btn-primary">
-                      Live Demo
-                    </a>
-                  )}
+                <div className="portfolio__card-back">
+                  <h3>About the Project</h3>
+                  <p>{description}</p>
                 </div>
               </div>
+            </div>
+
+            {/* Buttons outside the flipping card */}
+            <div className="portfolio__item-cta">
+              <a href={github} className="btn" target="_blank" rel="noopener noreferrer">GitHub</a>
+              {demo && (
+                <a href={demo} className="btn btn-primary" target="_blank" rel="noopener noreferrer">Live Demo</a>
+              )}
+              {options && (
+                <a href={options} className="btn btn-primary" target="_blank" rel="noopener noreferrer">See More</a>
+              )}
             </div>
           </div>
         ))}
@@ -115,4 +110,4 @@ export const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Portfolio
