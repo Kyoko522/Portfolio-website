@@ -58,7 +58,7 @@ export default function About() {
                         I'm a Computer Science student at Toronto Metropolitan University in my third year. I enjoy creating applications ranging from games to practical tools like flashcards and chess simulators.
                         </p>
                         <p>
-                        Beyond coding, I'm passionate about robotics, working on cars, and exploring AI technologies. I find genuine satisfaction in both the technical challenges of programming and the hands-on nature of mechanical projects.
+                        When I'm not focused on schoolwork, you'll find me designing robots, working under the hood of a car, or coding with Arduino. I'm fascinated by AI and enjoy the perfect balance between solving complex programming challenges and getting my hands dirty with mechanical projects.
                         </p>
                         <p>
                         I thrive in collaborative environments where ideas can be openly discussed and tested. Gaming is another interest of mine - both playing and developing games that create engaging experiences.
