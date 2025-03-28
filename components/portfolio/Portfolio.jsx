@@ -4,22 +4,21 @@ import Image from 'next/image'
 
 const data = [
   //TODO: add the EcoDex application here as soon as it's hosted on vercel
-  // {
-  //   id: 0,
-  //   image: ``,
-  //   title: 'EcoDex',
-  //   github: 'https://github.com/Kyoko522/EcoDex',
-  //   demo: 'link',
-  //   description: 'EcoDex is a web application that allows users to search for and view information about various plant species. The application uses the Plant API to fetch data about plants, including their scientific names, common names, and images. Users can search for plants by their common or scientific names, and view detailed information about each plant.', 
-  //   options: true,
-  // },
+  {
+    id: 0,
+    image: ``,
+    title: 'EcoDex',
+    github: 'https://github.com/Kyoko522/EcoDex',
+    demo: 'link',
+    description: 'EcoDex is a web application that allows users to search for and view information about various plant species. The application uses the Plant API to fetch data about plants, including their scientific names, common names, and images. Users can search for plants by their common or scientific names, and view detailed information about each plant.', 
+    options: '/projects/ecodex',
+  },
   {
     id: 1,
     image: `/assets/food_management.png`,
     title: 'Food Management App',
     github: 'https://github.com/Kyoko522/Food-Management',
     description: 'An initiative by the Practical Application of Computer Science (PACS) club in collaboration with VIRO. This Android application aims to reduce food waste by connecting event organizers with students and club members interested in receiving surplus food after events. The app facilitates a sustainable solution, ensuring that excess food doesn\'t go to waste and benefits those in need.',
-    options: '/projects/ecodex',
   },
   {
     id: 2,

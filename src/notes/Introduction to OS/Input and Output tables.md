@@ -1,0 +1,3 @@
+- I/O tables allow the OS to manage I/O devices and channels of the computer system
+- An I/O device can be made available or assigned to a process 
+- If any I/O operation is in progress, the OS needs to know the status and the location in the memory used as the source or destination for the I/O transfer.
