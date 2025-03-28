@@ -52,7 +52,22 @@ export default function About() {
                     </div>
                     <div className='about__text'>
                         <p>
-                            I&apos;sm Sheel Patel, a dedicated and versatile Computer Science student at Toronto Metropolitan University. Proficient in programming languages like Python, Java, and more, with a GPA of 3.7+. Ready to excel in computer science and contribute to innovative projects and teams. Explore my work below!
+                        Hi, I'm Sheel Patel
+                        </p>
+                        <p>
+                        I'm a Computer Science student at Toronto Metropolitan University in my third year. I enjoy creating applications ranging from games to practical tools like flashcards and chess simulators.
+                        </p>
+                        <p>
+                        Beyond coding, I'm passionate about robotics, working on cars, and exploring AI technologies. I find genuine satisfaction in both the technical challenges of programming and the hands-on nature of mechanical projects.
+                        </p>
+                        <p>
+                        I thrive in collaborative environments where ideas can be openly discussed and tested. Gaming is another interest of mine - both playing and developing games that create engaging experiences.
+                        </p>
+                        <p>
+                        My approach to computer science is versatile; I enjoy tackling different aspects of projects and paying attention to the details that make technology work smoothly.
+                        </p>
+                        <p>
+                        Welcome to my site - I'm glad you're here!
                         </p>
                         <a href='#contact' className='btn btn-primary'>Let&apos;s Talk</a>
                     </div>
