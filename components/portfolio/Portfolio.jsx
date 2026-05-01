@@ -63,7 +63,15 @@ const data = [
     image: `/assets/Chess.png`,
     title: 'Chess',
     github: 'https://github.com/Kyoko522/Chess',
-    description: 'Chess is a JFrame application that allows two players to play a game of chess. The game board is displayed, and the players take turns making moves. The application uses object-oriented programming principles to represent the chess board, pieces, and players. The player can move pieces, capture opponents, and checkmate the opponent. Currently still under work attempting to implement ai functionality with Minimax algorithm.', 
+    description: 'Chess is a JFrame application that allows two players to play a game of chess. The game board is displayed, and the players take turns making moves. The application uses object-oriented programming principles to represent the chess board, pieces, and players. The player can move pieces, capture opponents, and checkmate the opponent. Currently still under work attempting to implement ai functionality with Minimax algorithm.',
+  },
+  {
+    id: 8,
+    image: ``,
+    title: 'F1 Live Telemetry Dashboard',
+    github: 'https://github.com/Kyoko522/f1-dashboard',
+    demo: 'https://f1-dashboard-production.up.railway.app',
+    description: 'A full-stack Formula 1 race replay dashboard built with React and FastAPI. Uses the FastF1 Python library to pull real session data and lets you replay any race from 2018 onward, watching all 20 cars move around the track in real time. Features a live leaderboard, lap counter, per-driver telemetry (speed, throttle, brake, gear, RPM, DRS), adjustable playback speed, and a race-start detection algorithm. Deployed with a Vite/React frontend on Vercel and a FastAPI backend on Railway.',
   },
 ]
 
