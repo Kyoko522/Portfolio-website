@@ -61,13 +61,13 @@ const data = [
   {
     id: 7,
     image: `/assets/Chess.png`,
-    title: 'Chess',
+    title: 'Java Chess',
     github: 'https://github.com/Kyoko522/Chess',
     description: 'Chess is a JFrame application that allows two players to play a game of chess. The game board is displayed, and the players take turns making moves. The application uses object-oriented programming principles to represent the chess board, pieces, and players. The player can move pieces, capture opponents, and checkmate the opponent. Currently still under work attempting to implement ai functionality with Minimax algorithm.',
   },
   {
     id: 8,
-    image: `/assets/Weather.png`,
+    image: `/assets/PawFind.png`,
     title: 'PawFind',
     github: 'https://github.com/Kyoko522/Paw-App',
     demo: 'https://paw-app.netlify.app/',
