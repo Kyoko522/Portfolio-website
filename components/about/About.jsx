@@ -42,7 +42,7 @@ export default function About() {
               <FaSchool className="about__icon" />
               <h5>University</h5>
               <small>Toronto Metropolitan University</small>
-              <small>3.7 CGPA</small>
+              <small>Graduate Student</small>
             </article>
 
             <article className="about__card">
@@ -62,8 +62,8 @@ export default function About() {
           <div className="about__text">
             <p>Hi, I&apos;m Sheel Patel</p>
             <p>
-              I&apos;m a Computer Science student at Toronto Metropolitan University
-              in my third year. I enjoy creating applications ranging from games
+              I&apos;m a Graduate Student in Computer Science at Toronto Metropolitan
+              University. I enjoy creating applications ranging from games
               to practical tools like flashcards and chess simulators.
             </p>
             <p>
