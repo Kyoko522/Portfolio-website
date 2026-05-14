@@ -66,7 +66,16 @@ const data = [
     description: 'Chess is a JFrame application that allows two players to play a game of chess. The game board is displayed, and the players take turns making moves. The application uses object-oriented programming principles to represent the chess board, pieces, and players. The player can move pieces, capture opponents, and checkmate the opponent. Currently still under work attempting to implement ai functionality with Minimax algorithm.',
   },
   {
+    // Need to be upadated with the actual image of the application once it's hosted
     id: 8,
+    image: `/assets/Weather.png`,
+    title: 'Paw App',
+    github: 'https://github.com/Kyoko522/Paw-App',
+    demo: 'https://paw-app.netlify.app/',
+    description: 'Paw App is a weather application that allows users to search for the current weather conditions in any city. The application uses the OpenWeatherMap API to fetch weather data, including temperature, humidity, wind speed, and a brief description of the weather. The user can enter a city name, and the application will display the current weather conditions for that city.',
+  },
+  {
+    id: 9,
     image: ``,
     title: 'F1 Live Telemetry Dashboard',
     github: 'https://github.com/Kyoko522/f1-dashboard',
