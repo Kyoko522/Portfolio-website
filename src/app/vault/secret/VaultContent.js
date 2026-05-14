@@ -12,9 +12,9 @@ export default function VaultContent() {
   const authed = sessionStorage.getItem('vault_auth') === '1'
 
   // Parse once — sessionStorage data is static for this session
-  let CATEGORIES = [], MOVIES_SECTIONS = []
+  let CATEGORIES = [], SECTIONS = {}
   try {
-    if (raw) { ({ CATEGORIES = [], MOVIES_SECTIONS = [] } = JSON.parse(raw)) }
+    if (raw) { ({ CATEGORIES = [], SECTIONS = {} } = JSON.parse(raw)) }
   } catch { /* leave empty */ }
 
   const WIKI_CATS  = CATEGORIES.filter(c => c.group === 'Wiki')
@@ -39,27 +39,28 @@ export default function VaultContent() {
     })
   }, [])
 
-  const expandAll   = () => setOpenSections(new Set(MOVIES_SECTIONS.map(s => s.id)))
-  const collapseAll = () => setOpenSections(new Set())
-
   if (!authed || !raw) {
     router.replace('/vault')
     return null
   }
 
   const activeCat = CATEGORIES.find(c => c.id === activeId)
-  const isMovies  = activeId === 'movies'
 
-  const activeSections = MOVIES_SECTIONS.map(s => ({
+  const currentSections = (SECTIONS[activeId] || []).map(s => ({
     ...s,
     sites: s.sites.filter(site => site.active !== false),
   }))
 
-  const filteredSections = isMovies && query.trim()
-    ? activeSections
+  const hasContent = currentSections.length > 0
+
+  const expandAll   = () => setOpenSections(new Set(currentSections.map(s => s.id)))
+  const collapseAll = () => setOpenSections(new Set())
+
+  const filteredSections = hasContent && query.trim()
+    ? currentSections
         .map(s => ({ ...s, sites: s.sites.filter(site => site.name.toLowerCase().includes(query.toLowerCase())) }))
         .filter(s => s.sites.length > 0)
-    : activeSections
+    : currentSections
 
   return (
     <div className="vs-root">
@@ -72,7 +73,6 @@ export default function VaultContent() {
           <span className="vs-section-name">{activeCat?.icon} {activeCat?.name}</span>
         </div>
         <div className="vs-bar-right">
-          <a href="https://fmhy.net" target="_blank" rel="noopener noreferrer" className="vs-fmhy-link">fmhy.net ↗</a>
           <button onClick={logout} className="vs-logout">lock</button>
         </div>
       </header>
@@ -88,7 +88,7 @@ export default function VaultContent() {
               <button
                 key={cat.id}
                 className={`vs-nav-item${activeId === cat.id ? ' active' : ''}`}
-                onClick={() => { setActiveId(cat.id); setQuery(''); setSidebarOpen(false) }}
+                onClick={() => { setActiveId(cat.id); setQuery(''); setOpenSections(new Set()); setSidebarOpen(false) }}
               >
                 <span className="vs-nav-icon">{cat.icon}</span>{cat.name}
               </button>
@@ -100,7 +100,7 @@ export default function VaultContent() {
               <button
                 key={cat.id}
                 className={`vs-nav-item${activeId === cat.id ? ' active' : ''}`}
-                onClick={() => { setActiveId(cat.id); setQuery(''); setSidebarOpen(false) }}
+                onClick={() => { setActiveId(cat.id); setQuery(''); setOpenSections(new Set()); setSidebarOpen(false) }}
               >
                 <span className="vs-nav-icon">{cat.icon}</span>{cat.name}
               </button>
@@ -110,14 +110,13 @@ export default function VaultContent() {
 
         {/* Main content */}
         <main className="vs-main">
-          {isMovies ? (
+          {hasContent ? (
             <>
               <div className="vs-main-header">
                 <div>
-                  <h2 className="vs-main-title">🎬 Movies / TV / Anime</h2>
-                  <p className="vs-main-desc">Stream, download, and torrent movies, TV shows, anime, cartoons &amp; live sports.</p>
+                  <h2 className="vs-main-title">{activeCat?.icon} {activeCat?.name}</h2>
+                  <p className="vs-main-desc">{activeCat?.desc}</p>
                 </div>
-                <a href="https://fmhy.net/videopiracy" target="_blank" rel="noopener noreferrer" className="vs-fmhy-btn">Browse on FMHY ↗</a>
               </div>
 
               <div className="vs-search-row">
@@ -141,13 +140,6 @@ export default function VaultContent() {
                       <span className="vs-section-arrow">{openSections.has(section.id) ? '▾' : '▸'}</span>
                       <span className="vs-section-title">{section.title}</span>
                       <span className="vs-section-count">{section.sites.length} sites</span>
-                      <a
-                        href={section.fmhyUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="vs-section-link"
-                        onClick={e => e.stopPropagation()}
-                      >fmhy ↗</a>
                     </button>
                     {openSections.has(section.id) && (
                       <div className="vs-section-body">
@@ -156,7 +148,7 @@ export default function VaultContent() {
                           {section.sites.map(site => (
                             <a
                               key={site.name}
-                              href={site.url ?? `https://duckduckgo.com/?q=${encodeURIComponent(site.name + ' streaming site')}`}
+                              href={site.url ?? `https://duckduckgo.com/?q=${encodeURIComponent(site.name)}`}
                               target="_blank"
                               rel="noopener noreferrer"
                               className={`vs-site-pill${site.starred ? ' starred' : ''}`}
@@ -208,8 +200,6 @@ export default function VaultContent() {
         .vs-logo { font-family: 'GeistMono','Courier New',monospace; font-size: 0.85rem; color: var(--color-primary); letter-spacing: 0.05em; }
         .vs-slash { color: rgba(163,163,204,0.4); font-size: 0.85rem; }
         .vs-section-name { font-size: 0.82rem; color: var(--color-primary-lighter); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 220px; }
-        .vs-fmhy-link { font-size: 0.75rem; color: var(--color-secondary); text-decoration: none; transition: opacity 0.2s; }
-        .vs-fmhy-link:hover { opacity: 0.7; }
         .vs-logout {
           font-family: 'GeistMono','Courier New',monospace; font-size: 0.75rem;
           background: none; border: 1px solid rgba(132,94,194,0.4); border-radius: 4px;
@@ -241,14 +231,6 @@ export default function VaultContent() {
         .vs-main-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
         .vs-main-title { font-size: 1.5rem; font-weight: 600; color: var(--color-white); margin-bottom: 0.3rem; }
         .vs-main-desc { font-size: 0.82rem; color: var(--color-primary-lighter); max-width: 500px; }
-        .vs-fmhy-btn {
-          display: inline-block; padding: 0.55rem 1.1rem;
-          background: rgba(132,94,194,0.15); border: 1px solid rgba(132,94,194,0.4);
-          border-radius: 6px; color: var(--color-primary); font-size: 0.8rem;
-          text-decoration: none; white-space: nowrap; flex-shrink: 0;
-          transition: background 0.2s, border-color 0.2s;
-        }
-        .vs-fmhy-btn:hover { background: rgba(132,94,194,0.25); border-color: var(--color-primary); }
         .vs-search-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
         .vs-search {
           flex: 1; min-width: 180px; max-width: 320px;
@@ -278,13 +260,7 @@ export default function VaultContent() {
         .vs-section-head:hover { background: rgba(132,94,194,0.1); }
         .vs-section-arrow { color: var(--color-primary); font-size: 0.9rem; flex-shrink: 0; }
         .vs-section-title { flex: 1; }
-        .vs-section-count { font-size: 0.7rem; color: rgba(163,163,204,0.5); font-weight: 400; margin-right: 0.25rem; }
-        .vs-section-link {
-          font-size: 0.7rem; color: var(--color-secondary); text-decoration: none;
-          padding: 0.2rem 0.45rem; border: 1px solid rgba(0,201,167,0.3);
-          border-radius: 4px; transition: background 0.15s; flex-shrink: 0;
-        }
-        .vs-section-link:hover { background: rgba(0,201,167,0.1); }
+        .vs-section-count { font-size: 0.7rem; color: rgba(163,163,204,0.5); font-weight: 400; }
         .vs-section-body { padding: 0 1rem 1rem; }
         .vs-tip {
           font-size: 0.75rem; color: var(--color-primary-lighter);

@@ -797,3 +797,803 @@ export const MOVIES_SECTIONS = [
     ],
   },
 ]
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SECTIONS — one key per category ID (movies is merged in by encrypt-vault.mjs)
+// ─────────────────────────────────────────────────────────────────────────────
+export const SECTIONS = {
+  adblock: [
+    {
+      id: 'adblocking', title: 'Adblocking',
+      tip: 'Browser extensions that block ads and trackers.',
+      sites: [
+        { name: 'uBlock Origin',  url: 'https://ublockorigin.com',                starred: true, active: true },
+        { name: 'AdGuard',        url: 'https://adguard.com',                     starred: true, active: true },
+        { name: 'SponsorBlock',   url: 'https://sponsor.ajay.app',                starred: true, active: true },
+      ],
+    },
+    {
+      id: 'dns', title: 'DNS Blocking',
+      tip: 'Block ads and trackers at the network level.',
+      sites: [
+        { name: 'Pi-Hole',      url: 'https://pi-hole.net',                                          starred: true, active: true },
+        { name: 'AdGuard Home', url: 'https://github.com/AdguardTeam/AdGuardHome',                   starred: true, active: true },
+        { name: 'Mullvad DNS',  url: 'https://mullvad.net/en/help/dns-over-https-and-dns-over-tls',  starred: true, active: true },
+      ],
+    },
+    {
+      id: 'antivirus', title: 'Antivirus / Malware',
+      tip: 'Scan files and URLs before opening.',
+      sites: [
+        { name: 'Malwarebytes',   url: 'https://www.malwarebytes.com',                          starred: true, active: true },
+        { name: 'ANY.RUN',        url: 'https://any.run',                                       starred: true, active: true },
+        { name: 'Triage',         url: 'https://tria.ge',                                       starred: true, active: true },
+        { name: 'FMHY SafeGuard', url: 'https://github.com/fmhy/FMHY-SafeGuard',               starred: true, active: true },
+      ],
+    },
+    {
+      id: 'file-scanners', title: 'File Scanners',
+      tip: 'Check files against multiple AV engines.',
+      sites: [
+        { name: 'VirusTotal',      url: 'https://www.virustotal.com',       starred: true, active: true },
+        { name: 'Hybrid Analysis', url: 'https://www.hybrid-analysis.com',  starred: true, active: true },
+      ],
+    },
+    {
+      id: 'privacy-indexes', title: 'Privacy Indexes',
+      tip: 'Comprehensive guides to digital privacy.',
+      sites: [
+        { name: 'Privacy Guides',  url: 'https://www.privacyguides.org',              starred: true, active: true },
+        { name: 'SSD',             url: 'https://ssd.eff.org',                        starred: true, active: true },
+        { name: 'The New Oil',     url: 'https://thenewoil.org',                      starred: true, active: true },
+        { name: 'Awesome Privacy', url: 'https://github.com/pluja/awesome-privacy',   starred: true, active: true },
+      ],
+    },
+    {
+      id: 'browser-privacy', title: 'Browser Privacy',
+      tip: 'Privacy-focused browsers and hardening configs.',
+      sites: [
+        { name: 'Tor Browser',     url: 'https://www.torproject.org',         starred: true, active: true },
+        { name: 'Mullvad Browser', url: 'https://mullvad.net/browser',        starred: true, active: true },
+        { name: 'LibreWolf',       url: 'https://librewolf.net',              starred: true, active: true },
+        { name: 'arkenfox',        url: 'https://github.com/arkenfox/user.js', starred: true, active: true },
+      ],
+    },
+    {
+      id: 'messengers', title: 'Messengers',
+      tip: 'End-to-end encrypted messaging apps.',
+      sites: [
+        { name: 'Signal',  url: 'https://signal.org',    starred: true, active: true },
+        { name: 'SimpleX', url: 'https://simplex.chat',  starred: true, active: true },
+        { name: 'Molly',   url: 'https://molly.im',      starred: true, active: true },
+      ],
+    },
+    {
+      id: 'search-engines', title: 'Search Engines',
+      tip: 'Privacy-respecting search engines.',
+      sites: [
+        { name: 'Brave Search', url: 'https://search.brave.com',  starred: true, active: true },
+        { name: 'DuckDuckGo',   url: 'https://duckduckgo.com',    starred: true, active: true },
+      ],
+    },
+    {
+      id: 'vpn', title: 'VPN',
+      tip: 'Trusted no-logs VPN providers.',
+      sites: [
+        { name: 'Proton VPN', url: 'https://protonvpn.com',   starred: true, active: true },
+        { name: 'Mullvad',    url: 'https://mullvad.net',     starred: true, active: true },
+        { name: 'Windscribe', url: 'https://windscribe.com',  starred: true, active: true },
+      ],
+    },
+    {
+      id: 'anti-censorship', title: 'Anti-Censorship',
+      tip: 'Bypass internet censorship and deep packet inspection.',
+      sites: [
+        { name: 'zapret',        url: 'https://github.com/bol-van/zapret',                  starred: true, active: true },
+        { name: 'GoodbyeDPI',    url: 'https://github.com/ValdikSS/GoodbyeDPI',             starred: true, active: true },
+        { name: 'ByeDPIAndroid', url: 'https://github.com/dovecoteescapee/ByeDPIAndroid',   starred: true, active: true },
+      ],
+    },
+    {
+      id: 'proxy', title: 'Proxy',
+      tip: 'Proxy tools to bypass regional restrictions.',
+      sites: [
+        { name: 'Psiphon', url: 'https://psiphon.ca',                                 starred: true, active: true },
+        { name: 'Lantern', url: 'https://getlantern.org',                             starred: true, active: true },
+        { name: 'v2rayN',  url: 'https://github.com/2dust/v2rayN',                    starred: true, active: true },
+        { name: 'NekoBox', url: 'https://github.com/MatsuriDayo/NekoBoxForAndroid',   starred: true, active: true },
+      ],
+    },
+    {
+      id: 'proxy-sites', title: 'Proxy Sites',
+      tip: 'Web proxies for quick anonymous browsing.',
+      sites: [
+        { name: 'Titanium Network', url: 'https://titaniumnetwork.org', starred: true, active: true },
+      ],
+    },
+  ],
+
+  ai: [
+    {
+      id: 'ai-official', title: 'Official Chatbots',
+      tip: 'Leading AI assistants from major labs.',
+      sites: [
+        { name: 'DeepSeek',         url: 'https://chat.deepseek.com',   starred: true, active: true },
+        { name: 'Google AI Studio', url: 'https://aistudio.google.com', starred: true, active: true },
+      ],
+    },
+    {
+      id: 'ai-multi', title: 'Multi-Model',
+      tip: 'Frontends giving access to multiple AI models in one place.',
+      sites: [
+        { name: 'ISH',     url: 'https://ish.ai',       starred: true, active: true },
+        { name: 'Woozlit', url: 'https://woozlit.com',  starred: true, active: true },
+      ],
+    },
+    {
+      id: 'ai-specialized', title: 'Specialized AI',
+      tip: 'AI tools built for specific tasks.',
+      sites: [
+        { name: 'NotebookLM', url: 'https://notebooklm.google.com', starred: true, active: true },
+        { name: 'Ask Brave',  url: 'https://search.brave.com/chat', starred: true, active: true },
+      ],
+    },
+    {
+      id: 'ai-local', title: 'Local Frontends',
+      tip: 'Run AI models locally on your own hardware.',
+      sites: [
+        { name: 'SillyTavern', url: 'https://sillytavern.app',                                               starred: true, active: true },
+        { name: 'Open WebUI',  url: 'https://openwebui.com',                                                 starred: true, active: true },
+        { name: 'Jan',         url: 'https://jan.ai',                                                        starred: true, active: true },
+        { name: 'LM Studio',   url: 'https://lmstudio.ai',                                                   starred: true, active: true },
+        { name: 'oobabooga',   url: 'https://github.com/oobabooga/text-generation-webui',                    starred: true, active: true },
+      ],
+    },
+    {
+      id: 'ai-roleplay', title: 'Roleplaying',
+      tip: 'AI companions and character roleplay platforms.',
+      sites: [
+        { name: 'Perchance',   url: 'https://perchance.org/ai-character-chat',  starred: true, active: true },
+        { name: 'PygmalionAI', url: 'https://pygmalion.chat',                   starred: true, active: true },
+        { name: 'Agnai',       url: 'https://agnai.chat',                       starred: true, active: true },
+        { name: 'Chub',        url: 'https://chub.ai',                          starred: true, active: true },
+        { name: 'FlowGPT',     url: 'https://flowgpt.com',                      starred: true, active: true },
+      ],
+    },
+    {
+      id: 'ai-image-online', title: 'Image Gen — Online',
+      tip: 'Generate images in the browser with no setup.',
+      sites: [
+        { name: 'Image Arena',  url: 'https://imgsys.org',             starred: true, active: true },
+        { name: 'Gemini',       url: 'https://gemini.google.com',      starred: true, active: true },
+        { name: 'GeminiGen AI', url: 'https://geminigen.ai',           starred: true, active: true },
+      ],
+    },
+    {
+      id: 'ai-image-local', title: 'Image Gen — Local',
+      tip: 'Stable Diffusion frontends for local image generation.',
+      sites: [
+        { name: 'Stability Matrix', url: 'https://github.com/LykosAI/StabilityMatrix',              starred: true, active: true },
+        { name: 'ComfyUI',          url: 'https://github.com/comfyanonymous/ComfyUI',               starred: true, active: true },
+        { name: 'Automatic1111',    url: 'https://github.com/AUTOMATIC1111/stable-diffusion-webui', starred: true, active: true },
+        { name: 'Invoke',           url: 'https://invoke.ai',                                       starred: true, active: true },
+        { name: 'Fooocus',          url: 'https://github.com/lllyasviel/Fooocus',                   starred: true, active: true },
+      ],
+    },
+    {
+      id: 'ai-video', title: 'Video Generation',
+      tip: 'AI-powered video generation.',
+      sites: [
+        { name: 'VBench',      url: 'https://vchitect.github.io/VBench-project',  starred: true, active: true },
+        { name: 'Google Flow', url: 'https://labs.google/flow',                   starred: true, active: true },
+      ],
+    },
+    {
+      id: 'ai-tts', title: 'TTS / Voice',
+      tip: 'Text-to-speech and voice cloning.',
+      sites: [
+        { name: 'Arena TTS', url: 'https://huggingface.co/spaces/TTS-AGI/TTS-Arena',                          starred: true, active: true },
+        { name: 'Applio',    url: 'https://applio.org',                                                       starred: true, active: true },
+        { name: 'RVC V2',    url: 'https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI',    starred: true, active: true },
+        { name: 'MVSEP',     url: 'https://mvsep.com',                                                        starred: true, active: true },
+      ],
+    },
+    {
+      id: 'ai-tools', title: 'AI Tools',
+      tip: 'Utilities for exploring and comparing AI.',
+      sites: [
+        { name: 'AI Price Compare',       url: 'https://aipricecompare.com',                          starred: true, active: true },
+        { name: 'Every ChatGPT GUI',      url: 'https://github.com/billmei/every-chatgpt-gui',        starred: true, active: true },
+        { name: 'L1B3RT4S',               url: 'https://huggingface.co/datasets/elder-plinius/L1B3RT4S', starred: true, active: true },
+        { name: 'Prompt Engineering Guide', url: 'https://www.promptingguide.ai',                     starred: true, active: true },
+      ],
+    },
+    {
+      id: 'ai-indexes', title: 'AI Indexes',
+      tip: 'Directories for discovering AI tools and models.',
+      sites: [
+        { name: 'LLM Explorer', url: 'https://llm.extractum.io',   starred: true, active: true },
+        { name: 'FutureTools',  url: 'https://www.futuretools.io',  starred: true, active: true },
+      ],
+    },
+    {
+      id: 'ai-benchmarks', title: 'Benchmarks',
+      tip: 'Compare AI model performance.',
+      sites: [
+        { name: 'Artificial Analysis', url: 'https://artificialanalysis.ai',  starred: true, active: true },
+        { name: 'Chatbot Arena',       url: 'https://chat.lmsys.org',         starred: true, active: true },
+      ],
+    },
+    {
+      id: 'ai-ml', title: 'Machine Learning',
+      tip: 'Model hubs and ML resources.',
+      sites: [
+        { name: 'Hugging Face', url: 'https://huggingface.co',  starred: true, active: true },
+        { name: 'OpenML',       url: 'https://www.openml.org',  starred: true, active: true },
+      ],
+    },
+  ],
+
+  music: [
+    {
+      id: 'music-streaming', title: 'Streaming',
+      tip: 'Stream music online for free.',
+      sites: [
+        { name: 'Monochrome',          url: 'https://monokai.nl',              starred: true, active: true },
+        { name: 'SoundCloud',          url: 'https://soundcloud.com',          starred: true, active: true },
+        { name: 'Reddit Music Player', url: 'https://reddit.musicplayer.io',   starred: true, active: true },
+      ],
+    },
+    {
+      id: 'music-concerts', title: 'Concerts',
+      tip: 'Live concert recordings and archives.',
+      sites: [
+        { name: '365 Radio', url: 'https://365live.pl/en',  starred: true, active: true },
+        { name: 'bt.etree',  url: 'https://bt.etree.org',   starred: true, active: true },
+        { name: 'hate5six',  url: 'https://hate5six.com',   starred: true, active: true },
+        { name: 'MiroPPB',   url: 'https://miropbb.net',    starred: true, active: true },
+      ],
+    },
+    {
+      id: 'music-podcasts', title: 'Podcasts',
+      tip: 'Podcast apps and directories.',
+      sites: [
+        { name: 'Spotify Podcasts', url: 'https://open.spotify.com/shows',  starred: true, active: true },
+        { name: 'Pocket Casts',     url: 'https://pocketcasts.com',         starred: true, active: true },
+      ],
+    },
+    {
+      id: 'music-ambient', title: 'Ambient / Focus',
+      tip: 'Background soundscapes and focus music.',
+      sites: [
+        { name: 'Drone Zone',            url: 'https://somafm.com/player/#/now-playing/dronezone',  starred: true, active: true },
+        { name: 'myNoise',               url: 'https://mynoise.net',                                starred: true, active: true },
+        { name: 'Music For Programming', url: 'https://musicforprogramming.net',                    starred: true, active: true },
+      ],
+    },
+    {
+      id: 'music-radio', title: 'Radio',
+      tip: 'Internet radio stations worldwide.',
+      sites: [
+        { name: 'FMSTREAM',    url: 'https://fmstream.org',    starred: true, active: true },
+        { name: 'Radio Garden', url: 'https://radio.garden',  starred: true, active: true },
+        { name: 'SomaFM',      url: 'https://somafm.com',     starred: true, active: true },
+        { name: 'NTS Radio',   url: 'https://www.nts.live',   starred: true, active: true },
+      ],
+    },
+    {
+      id: 'music-lofi', title: 'Lo-fi / Chill',
+      tip: 'Lofi and chill music streams.',
+      sites: [
+        { name: 'Flow-Fi',  url: 'https://flowfi.netlify.app',  starred: true, active: true },
+        { name: 'Chillhop', url: 'https://chillhop.com',        starred: true, active: true },
+        { name: 'CityHop',  url: 'https://cityhop.cafe',        starred: true, active: true },
+      ],
+    },
+    {
+      id: 'music-spotify-tools', title: 'Spotify Tools',
+      tip: 'Customize and extend Spotify.',
+      sites: [
+        { name: 'Spicetify', url: 'https://spicetify.app',                    starred: true, active: true },
+        { name: 'SpotX',     url: 'https://github.com/SpotX-Official/SpotX',  starred: true, active: true },
+        { name: 'Exportify', url: 'https://exportify.net',                    starred: true, active: true },
+      ],
+    },
+    {
+      id: 'music-ripping', title: 'Audio Ripping',
+      tip: 'Download music from streaming services.',
+      sites: [
+        { name: 'lucida',       url: 'https://lucida.to',           starred: true, active: true },
+        { name: 'squid.wtf',    url: 'https://squid.wtf',           starred: true, active: true },
+        { name: 'DoubleDouble',  url: 'https://doubledouble.top',   starred: true, active: true },
+        { name: 'Nicotine+',    url: 'https://nicotine-plus.org',   starred: true, active: true },
+        { name: 'Soulseek',     url: 'http://www.slsknet.org',       starred: true, active: true },
+      ],
+    },
+    {
+      id: 'music-downloads', title: 'Downloads',
+      tip: 'Music download sites and guides.',
+      sites: [
+        { name: 'Music Download Guide', url: 'https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/music',  starred: true, active: true },
+        { name: 'ArtistGrid',           url: 'https://www.artistgrid.dev',                             starred: true, active: true },
+      ],
+    },
+    {
+      id: 'music-torrenting', title: 'Torrenting',
+      tip: 'High-quality music via private trackers and torrents.',
+      sites: [
+        { name: 'Redacted', url: 'https://redacted.ch',      starred: true, active: true },
+        { name: 'Orpheus',  url: 'https://orpheus.network',  starred: true, active: true },
+        { name: 'Lidarr',   url: 'https://lidarr.audio',     starred: true, active: true },
+      ],
+    },
+    {
+      id: 'music-royalty-free', title: 'Royalty Free',
+      tip: 'Free music for content creation.',
+      sites: [
+        { name: 'NCS',              url: 'https://ncs.io',                       starred: true, active: true },
+        { name: 'YT Audio Library', url: 'https://www.youtube.com/audiolibrary', starred: true, active: true },
+      ],
+    },
+    {
+      id: 'music-soundtracks', title: 'Soundtracks',
+      tip: 'Game and anime OSTs.',
+      sites: [
+        { name: 'Squidify',         url: 'https://www.squidify.org',          starred: true, active: true },
+        { name: 'Khinsider',        url: 'https://downloads.khinsider.com',   starred: true, active: true },
+        { name: 'Sitting on Clouds', url: 'https://www.sittingonclouds.net',  starred: true, active: true },
+      ],
+    },
+    {
+      id: 'music-tracking', title: 'Tracking',
+      tip: 'Track and discover music.',
+      sites: [
+        { name: 'RateYourMusic', url: 'https://rateyourmusic.com',  starred: true, active: true },
+        { name: 'Last.fm',       url: 'https://www.last.fm',        starred: true, active: true },
+        { name: 'EveryNoise',    url: 'https://everynoise.com',     starred: true, active: true },
+      ],
+    },
+    {
+      id: 'music-players', title: 'Players',
+      tip: 'Music player apps.',
+      sites: [
+        { name: 'Foobar2000', url: 'https://www.foobar2000.org',  starred: true, active: true },
+        { name: 'MusicBee',   url: 'https://getmusicbee.com',     starred: true, active: true },
+        { name: 'Navidrome',  url: 'https://www.navidrome.org',   starred: true, active: true },
+      ],
+    },
+    {
+      id: 'music-editors', title: 'Editors',
+      tip: 'Audio editing software.',
+      sites: [
+        { name: 'Tenacity',   url: 'https://tenacityaudio.org',     starred: true, active: true },
+        { name: 'Audacity',   url: 'https://www.audacityteam.org',  starred: true, active: true },
+        { name: 'Audioalter', url: 'https://audioalter.com',        starred: true, active: true },
+      ],
+    },
+    {
+      id: 'music-lyrics', title: 'Lyrics',
+      tip: 'Find and translate song lyrics.',
+      sites: [
+        { name: 'Genius',          url: 'https://genius.com',           starred: true, active: true },
+        { name: 'LyricsTranslate', url: 'https://lyricstranslate.com',  starred: true, active: true },
+      ],
+    },
+    {
+      id: 'music-plugins', title: 'Plugins / Production',
+      tip: 'Free VSTs and synths for music production.',
+      sites: [
+        { name: 'Free VST Plugins', url: 'https://www.vstplanet.com',              starred: true, active: true },
+        { name: 'Surge XT',         url: 'https://surge-synthesizer.github.io',    starred: true, active: true },
+        { name: 'Vital',            url: 'https://vital.audio',                    starred: true, active: true },
+      ],
+    },
+  ],
+
+  gaming: [
+    {
+      id: 'gaming-downloads', title: 'Download Games',
+      tip: 'Download PC games. Use an adblocker.',
+      sites: [
+        { name: 'CS.RIN.RU',  url: 'https://cs.rin.ru/forum',   starred: true, active: true },
+        { name: 'SteamRIP',   url: 'https://steamrip.com',      starred: true, active: true },
+        { name: 'GOG Games',  url: 'https://gog-games.to',      starred: true, active: true },
+        { name: 'AnkerGames', url: 'https://ankergames.net',    starred: true, active: true },
+      ],
+    },
+    {
+      id: 'gaming-repacks', title: 'Repacks',
+      tip: 'Compressed game installers — saves bandwidth.',
+      sites: [
+        { name: 'FitGirl',  url: 'https://fitgirl-repacks.site',  starred: true, active: true },
+        { name: 'KaOsKrew', url: 'https://kaoskrew.org',          starred: true, active: true },
+      ],
+    },
+    {
+      id: 'gaming-emulation', title: 'Emulation',
+      tip: 'Emulators and ROM archives.',
+      sites: [
+        { name: 'Emulation Wiki', url: 'https://emulation.gametechwiki.com',  starred: true, active: true },
+        { name: "Vimm's Lair",    url: 'https://vimm.net',                    starred: true, active: true },
+        { name: "r/ROMs Mega",    url: 'https://r-roms.github.io',            starred: true, active: true },
+        { name: 'CDRomance',      url: 'https://cdromance.org',               starred: true, active: true },
+      ],
+    },
+    {
+      id: 'gaming-browser-emulators', title: 'Browser Emulators',
+      tip: 'Play classic games directly in your browser.',
+      sites: [
+        { name: 'GAM.ONL',    url: 'https://gam.onl',                    starred: true, active: true },
+        { name: 'DOS Zone',   url: 'https://dos.zone',                   starred: true, active: true },
+        { name: 'Flashpoint', url: 'https://flashpointarchive.org',      starred: true, active: true },
+      ],
+    },
+    {
+      id: 'gaming-puzzle', title: 'Puzzle',
+      tip: 'Free browser puzzle games.',
+      sites: [
+        { name: 'Simon Tatham', url: 'https://www.chiark.greenend.org.uk/~sgtatham/puzzles', starred: true, active: true },
+      ],
+    },
+    {
+      id: 'gaming-tabletop', title: 'Tabletop',
+      tip: 'Online tabletop and board game platforms.',
+      sites: [
+        { name: 'Roll20',  url: 'https://roll20.net',  starred: true, active: true },
+        { name: 'lichess', url: 'https://lichess.org', starred: true, active: true },
+      ],
+    },
+  ],
+
+  books: [
+    {
+      id: 'books-ebooks', title: 'Ebooks',
+      tip: "Anna's Archive is the most comprehensive ebook source.",
+      sites: [
+        { name: "Anna's Archive",  url: 'https://annas-archive.org',   starred: true, active: true },
+        { name: 'Z-Library',       url: 'https://z-library.rs',        starred: true, active: true },
+        { name: 'Mobilism',        url: 'https://forum.mobilism.org',  starred: true, active: true },
+        { name: 'Library Genesis', url: 'https://libgen.is',           starred: true, active: true },
+      ],
+    },
+    {
+      id: 'books-audiobooks', title: 'Audiobooks',
+      tip: 'Free audiobook streaming and downloads.',
+      sites: [
+        { name: 'AudiobookBay',        url: 'https://audiobookbay.is',                        starred: true, active: true },
+        { name: 'Tokybook',            url: 'https://tokybook.com',                           starred: true, active: true },
+        { name: 'Mobilism Audiobooks', url: 'https://forum.mobilism.org/viewforum.php?f=120', starred: true, active: true },
+      ],
+    },
+    {
+      id: 'books-comics', title: 'Comics',
+      tip: 'Western comics and graphic novels.',
+      sites: [
+        { name: 'ReadComicsOnline', url: 'https://readcomiconline.li',  starred: true, active: true },
+        { name: 'GetComics',        url: 'https://getcomics.org',       starred: true, active: true },
+        { name: 'BatCave',          url: 'https://batcave.biz',         starred: true, active: true },
+        { name: 'xkcd',             url: 'https://xkcd.com',            starred: true, active: true },
+      ],
+    },
+    {
+      id: 'books-manga', title: 'Manga',
+      tip: 'Manga, manhwa, and manhua.',
+      sites: [
+        { name: 'MangaFire',    url: 'https://mangafire.to',    starred: true, active: true },
+        { name: 'MangaDex',     url: 'https://mangadex.org',    starred: true, active: true },
+        { name: 'Weeb Central', url: 'https://weebcentral.com', starred: true, active: true },
+        { name: 'Atsumaru',     url: 'https://atsu.moe',        starred: true, active: true },
+      ],
+    },
+    {
+      id: 'books-academic', title: 'Academic',
+      tip: 'Access paywalled papers and textbooks.',
+      sites: [
+        { name: 'Sci-Hub',        url: 'https://sci-hub.se',           starred: true, active: true },
+        { name: 'arXiv',          url: 'https://arxiv.org',            starred: true, active: true },
+        { name: 'Google Scholar', url: 'https://scholar.google.com',   starred: true, active: true },
+        { name: 'Zotero',         url: 'https://www.zotero.org',       starred: true, active: true },
+      ],
+    },
+    {
+      id: 'books-tracking', title: 'Tracking',
+      tip: 'Track books, manga, and light novels.',
+      sites: [
+        { name: 'GoodReads',    url: 'https://www.goodreads.com',      starred: true, active: true },
+        { name: 'StoryGraph',   url: 'https://www.thestorygraph.com',  starred: true, active: true },
+        { name: 'MAL',          url: 'https://myanimelist.net',        starred: true, active: true },
+        { name: 'Novel Updates', url: 'https://www.novelupdates.com',  starred: true, active: true },
+      ],
+    },
+  ],
+
+  downloading: [
+    {
+      id: 'dl-sites', title: 'Download Sites',
+      tip: 'Direct download sources.',
+      sites: [
+        { name: 'Internet Archive', url: 'https://archive.org', starred: true, active: true },
+      ],
+    },
+    {
+      id: 'dl-search', title: 'Search',
+      tip: 'Search engines for direct downloads.',
+      sites: [
+        { name: 'Download CSE', url: 'https://cse.google.com/cse?cx=006516753008110874046:0led5tukccj', starred: true, active: true },
+        { name: '4Shared',      url: 'https://www.4shared.com',                                        starred: true, active: true },
+      ],
+    },
+    {
+      id: 'dl-software', title: 'Software',
+      tip: 'Cracked and portable software downloads.',
+      sites: [
+        { name: 'Mobilism',     url: 'https://forum.mobilism.org',  starred: true, active: true },
+        { name: 'LRepacks',     url: 'https://lrepacks.net',        starred: true, active: true },
+        { name: 'CracksURL',    url: 'https://cracksurl.com',       starred: true, active: true },
+        { name: 'Nsane Forums', url: 'https://nsaneforums.com',     starred: true, active: true },
+      ],
+    },
+    {
+      id: 'dl-usenet', title: 'Usenet',
+      tip: 'High-speed binary downloads via Usenet.',
+      sites: [
+        { name: 'SABnzbd',      url: 'https://sabnzbd.org',                                  starred: true, active: true },
+        { name: 'Indexer List', url: 'https://www.reddit.com/r/usenet/wiki/indexers',         starred: true, active: true },
+      ],
+    },
+    {
+      id: 'dl-debrid', title: 'Debrid',
+      tip: 'Premium link generators and cloud download services.',
+      sites: [
+        { name: 'Debrid Comparison', url: 'https://www.reddit.com/r/seedboxes/comments/e129yi', starred: true, active: true },
+      ],
+    },
+  ],
+
+  torrenting: [
+    {
+      id: 'torrent-sites-general', title: 'Torrent Sites',
+      tip: 'Use a VPN or seedbox when torrenting.',
+      sites: [
+        { name: 'RuTracker',  url: 'https://rutracker.org',    starred: true, active: true },
+        { name: '1337x',      url: 'https://1337x.to',         starred: true, active: true },
+        { name: 'RARBG Dump', url: 'https://rarbgmirror.com',  starred: true, active: true },
+      ],
+    },
+    {
+      id: 'torrent-aggregators', title: 'Aggregators',
+      tip: 'Search across multiple torrent sites at once.',
+      sites: [
+        { name: 'ExT',    url: 'https://ext.to',      starred: true, active: true },
+        { name: 'BTDigg', url: 'https://btdig.com',   starred: true, active: true },
+        { name: 'Knaben', url: 'https://knaben.eu',   starred: true, active: true },
+      ],
+    },
+    {
+      id: 'torrent-clients', title: 'Clients',
+      tip: 'Torrent client apps.',
+      sites: [
+        { name: 'qBittorrent',  url: 'https://www.qbittorrent.org',  starred: true, active: true },
+        { name: 'Deluge',       url: 'https://deluge-torrent.org',   starred: true, active: true },
+        { name: 'Transmission', url: 'https://transmissionbt.com',   starred: true, active: true },
+      ],
+    },
+    {
+      id: 'torrent-remote', title: 'Remote / Debrid',
+      tip: 'Download torrents in the cloud and stream them.',
+      sites: [
+        { name: 'TorBox', url: 'https://torbox.app',      starred: true, active: true },
+        { name: 'Seedr',  url: 'https://www.seedr.cc',    starred: true, active: true },
+      ],
+    },
+    {
+      id: 'torrent-private', title: 'Private Trackers',
+      tip: 'Higher quality and better seeding ratios.',
+      sites: [
+        { name: 'Private Trackers General', url: 'https://wiki.installgentoo.com/index.php/Private_trackers', starred: true, active: true },
+        { name: 'OpenSignup',               url: 'https://www.reddit.com/r/opensignups',                      starred: true, active: true },
+      ],
+    },
+  ],
+
+  educational: [
+    {
+      id: 'edu-courses', title: 'Courses',
+      tip: 'Free university-level online courses.',
+      sites: [
+        { name: 'edX',               url: 'https://www.edx.org',          starred: true, active: true },
+        { name: 'MIT OpenCourseWare', url: 'https://ocw.mit.edu',          starred: true, active: true },
+        { name: 'Khan Academy',       url: 'https://www.khanacademy.org',  starred: true, active: true },
+      ],
+    },
+    {
+      id: 'edu-learning', title: 'Learning Sites',
+      tip: 'Interactive learning and problem-solving platforms.',
+      sites: [
+        { name: 'OSSU', url: 'https://github.com/ossu/computer-science',  starred: true, active: true },
+        { name: 'PhET', url: 'https://phet.colorado.edu',                 starred: true, active: true },
+      ],
+    },
+    {
+      id: 'edu-physics', title: 'Physics',
+      tip: 'Free physics learning resources.',
+      sites: [
+        { name: 'Feynman Lectures',     url: 'https://www.feynmanlectures.caltech.edu',  starred: true, active: true },
+        { name: 'Bartosz Ciechanowski', url: 'https://ciechanow.ski',                    starred: true, active: true },
+      ],
+    },
+    {
+      id: 'edu-math', title: 'Math',
+      tip: 'Mathematical tools and references.',
+      sites: [
+        { name: 'WolframAlpha', url: 'https://www.wolframalpha.com',            starred: true, active: true },
+        { name: 'Awesome Math',  url: 'https://github.com/rossant/awesome-math', starred: true, active: true },
+      ],
+    },
+    {
+      id: 'edu-space', title: 'Space',
+      tip: 'Space exploration and astronomy.',
+      sites: [
+        { name: 'NASA', url: 'https://www.nasa.gov', starred: true, active: true },
+      ],
+    },
+    {
+      id: 'edu-history', title: 'History',
+      tip: 'Historical timelines and archives.',
+      sites: [
+        { name: 'Histography', url: 'https://histography.io', starred: true, active: true },
+      ],
+    },
+    {
+      id: 'edu-language', title: 'Language Learning',
+      tip: 'Tools for language immersion and learning.',
+      sites: [
+        { name: 'Yomitan',          url: 'https://github.com/themoeway/yomitan',  starred: true, active: true },
+        { name: 'Language Reactor', url: 'https://www.languagereactor.com',       starred: true, active: true },
+      ],
+    },
+    {
+      id: 'edu-chess', title: 'Chess',
+      tip: 'Chess software and tools.',
+      sites: [
+        { name: 'Scid vs. PC', url: 'https://scidvspc.sourceforge.net', starred: true, active: true },
+      ],
+    },
+  ],
+
+  android: [
+    {
+      id: 'android-modded', title: 'Modded APKs',
+      tip: 'Modified APKs — scan files before installing.',
+      sites: [
+        { name: 'Mobilism', url: 'https://forum.mobilism.org',  active: true },
+        { name: 'RockMods', url: 'https://rockmodapk.com',      active: true },
+        { name: 'LiteAPKs', url: 'https://liteapks.com',        active: true },
+        { name: 'Modyolo',  url: 'https://modyolo.com',         active: true },
+      ],
+    },
+    {
+      id: 'android-foss', title: 'FOSS App Stores',
+      tip: 'Open-source Android app stores.',
+      sites: [
+        { name: 'F-Droid',   url: 'https://f-droid.org',                           starred: true, active: true },
+        { name: 'Droid-ify', url: 'https://github.com/Droid-ify/client',           starred: true, active: true },
+        { name: 'Neo Store', url: 'https://github.com/NeoApplications/Neo-Store',  starred: true, active: true },
+      ],
+    },
+    {
+      id: 'android-untouched', title: 'Untouched APKs',
+      tip: 'Clean, unmodified APK mirrors.',
+      sites: [
+        { name: 'APKMirror',   url: 'https://www.apkmirror.com',  starred: true, active: true },
+        { name: 'Aurora Store', url: 'https://auroraoss.com',     starred: true, active: true },
+      ],
+    },
+    {
+      id: 'android-revanced', title: 'ReVanced',
+      tip: 'Patch YouTube and other apps to remove ads.',
+      sites: [
+        { name: 'Morphe',           url: 'https://github.com/j-hc/revanced-magisk-module',  starred: true, active: true },
+        { name: 'ReVanced Manager', url: 'https://github.com/ReVanced/revanced-manager',    starred: true, active: true },
+      ],
+    },
+    {
+      id: 'android-social', title: 'Social Media Apps',
+      tip: 'Privacy-friendly alternative social media clients.',
+      sites: [
+        { name: 'AyuGram', url: 'https://github.com/AyuGram/AyuGramDesktop',      starred: true, active: true },
+        { name: 'Revenge',  url: 'https://github.com/revenge-mod/revenge-bundle', starred: true, active: true },
+        { name: 'Voyager',  url: 'https://github.com/aeharding/voyager',          starred: true, active: true },
+        { name: 'Tusky',    url: 'https://tusky.app',                             starred: true, active: true },
+      ],
+    },
+    {
+      id: 'android-launchers', title: 'Launchers',
+      tip: 'Customizable Android home screen launchers.',
+      sites: [
+        { name: 'Lawnchair', url: 'https://lawnchair.app',      starred: true, active: true },
+        { name: 'Niagara',   url: 'https://niagaralauncher.app', starred: true, active: true },
+      ],
+    },
+  ],
+
+  linux: [
+    {
+      id: 'linux-guides', title: 'Guides',
+      tip: 'The most comprehensive Linux reference.',
+      sites: [
+        { name: 'ArchWiki', url: 'https://wiki.archlinux.org', starred: true, active: true },
+      ],
+    },
+    {
+      id: 'linux-distros', title: 'Distros',
+      tip: 'Find and compare Linux distributions.',
+      sites: [
+        { name: 'DistroWatch',   url: 'https://distrowatch.com',   starred: true, active: true },
+        { name: 'DistroChooser', url: 'https://distrochooser.de',  starred: true, active: true },
+      ],
+    },
+    {
+      id: 'linux-apps', title: 'App Sources',
+      tip: 'Package managers and app stores for Linux and macOS.',
+      sites: [
+        { name: 'Flatpak',  url: 'https://flatpak.org',  starred: true, active: true },
+        { name: 'Homebrew', url: 'https://brew.sh',      starred: true, active: true },
+      ],
+    },
+    {
+      id: 'linux-system', title: 'System Tools',
+      tip: 'Essential Linux system utilities.',
+      sites: [
+        { name: 'Btop',      url: 'https://github.com/aristocratos/btop',   starred: true, active: true },
+        { name: 'TimeShift', url: 'https://github.com/linuxmint/timeshift',  starred: true, active: true },
+      ],
+    },
+    {
+      id: 'linux-wm', title: 'Window Managers',
+      tip: 'Tiling and compositing window managers.',
+      sites: [
+        { name: 'Hyprland', url: 'https://hyprland.org',  starred: true, active: true },
+        { name: 'i3wm',     url: 'https://i3wm.org',      starred: true, active: true },
+      ],
+    },
+    {
+      id: 'linux-gaming', title: 'Linux Gaming',
+      tip: 'Run Windows games on Linux.',
+      sites: [
+        { name: 'ProtonDB', url: 'https://www.protondb.com',  starred: true, active: true },
+        { name: 'Lutris',   url: 'https://lutris.net',        starred: true, active: true },
+        { name: 'Bottles',  url: 'https://usebottles.com',    starred: true, active: true },
+      ],
+    },
+    {
+      id: 'linux-mac', title: 'macOS',
+      tip: 'Essential macOS apps and resources.',
+      sites: [
+        { name: 'shottr',       url: 'https://shottr.cc',                        starred: true, active: true },
+        { name: 'Ghostty',      url: 'https://ghostty.org',                      starred: true, active: true },
+        { name: 'Awesome macOS', url: 'https://github.com/iCHAIT/awesome-macOS', starred: true, active: true },
+      ],
+    },
+    {
+      id: 'linux-terminal', title: 'Terminal',
+      tip: 'Terminal emulators and shells.',
+      sites: [
+        { name: 'Alacritty', url: 'https://alacritty.org',  starred: true, active: true },
+        { name: 'zsh',       url: 'https://www.zsh.org',    starred: true, active: true },
+      ],
+    },
+  ],
+
+  misc: [
+    {
+      id: 'misc-indexes', title: 'Indexes',
+      tip: 'Curated collections of awesome lists and resources.',
+      sites: [
+        { name: 'Awesome List Index', url: 'https://github.com/sindresorhus/awesome',  starred: true, active: true },
+        { name: 'GitHub Topics',      url: 'https://github.com/topics',                starred: true, active: true },
+        { name: 'Awesome Search',     url: 'https://awesomelists.top',                 starred: true, active: true },
+      ],
+    },
+  ],
+}
