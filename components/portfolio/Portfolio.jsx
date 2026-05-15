@@ -75,7 +75,7 @@ const data = [
   },
   {
     id: 9,
-    image: ``,
+    image: null,
     title: 'F1 Live Telemetry Dashboard',
     github: 'https://github.com/Kyoko522/f1-dashboard',
     demo: 'https://f1-dashboard-production.up.railway.app',
@@ -96,15 +96,18 @@ export const Portfolio = () => {
             <div className="portfolio__card">
               <div className="portfolio__card-inner">
                 <div className="portfolio__card-front">
-                  <div className="portfolio__item-image">
-                    <img src={image} alt={title} />
-                  </div>
+                  {image && (
+                    <div className="portfolio__item-image">
+                      <img src={image} alt={title} />
+                    </div>
+                  )}
                   <h3 className="portfolio__item-title">{title}</h3>
                 </div>
 
                 <div className="portfolio__card-back">
-                  <h3>About the Project</h3>
-                  <p>{description}</p>
+                  <div className="portfolio__card-back-accent" />
+                  <h3 className="portfolio__card-back-title">{title}</h3>
+                  <p className="portfolio__card-back-desc">{description}</p>
                 </div>
               </div>
             </div>

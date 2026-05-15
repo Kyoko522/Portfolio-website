@@ -10,7 +10,7 @@ export const Header = () => {
       <div className="container header__container">
         <h5>Hello I&apos;m</h5>
         <h1>Sheel Patel</h1>
-        <h5 className='text'>Graduate Student &amp; Fullstack Developer</h5>
+        <h5 className='text'>CS Graduate &amp; Fullstack Developer</h5>
         <CTA />
         <HeaderSocials />
         <div className="sheel_img">

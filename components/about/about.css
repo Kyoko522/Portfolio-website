@@ -2,34 +2,33 @@
     display: grid;
     grid-template-columns: 35% 50%;
     gap: 15%;
-    align-items: center; /* Center-align vertically */
+    align-items: stretch;
 }
 
 .about__me {
     width: 100%;
-    max-width: 300px; /* Limit the maximum width */
-    aspect-ratio: 3/4; /* Match the aspect ratio of the images (3024x4032 = 3:4) */
     border-radius: 2rem;
     background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
     display: grid;
     place-items: center;
-    margin: 0 auto; /* Center-align horizontally */
-    overflow: visible; /* hiddwn -> Prevent overflow for consistent sizing */
-                       /* visibale -> let the additional part that is overlapping to be seen  */
+    overflow: visible;
 }
 
 .about__me-image {
-    width: 100%; /* Fill the parent container */
-    height: 100%; /* Match the height to the container */
+    width: 100%;
+    height: 100%;
     border-radius: 2rem;
     overflow: hidden;
     transform: rotate(10deg);
-    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+    transition: transform 0.3s ease-in-out;
 }
 
 .about__me-image img {
-    width: 100%; /* Scale the image responsively */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
 }
 
 .about__me-image:hover {

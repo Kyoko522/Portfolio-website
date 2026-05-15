@@ -4,6 +4,66 @@
   gap: 2rem;
 }
 
+.experience__tools {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.experience__tool-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding-bottom: 0.6rem;
+}
+
+.experience__tool-name {
+  color: var(--color-primary-darker);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.experience__tool-links {
+  color: var(--color-primary-lighter);
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+.experience__tool-links a {
+  color: var(--color-primary-lighter);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.experience__tool-links a:hover {
+  color: var(--color-primary);
+}
+
+.experience__item:hover .experience__tool-name {
+  color: var(--color-white);
+}
+
+.experience__item:hover .experience__tool-links a {
+  color: var(--color-primary);
+}
+
+.experience__courses {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem 1rem;
+}
+
+.experience__course-row {
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding-bottom: 0.6rem;
+}
+
+.experience__item:hover .experience__course-row .experience__tool-name {
+  color: var(--color-white);
+}
+
 .experience__container > div {
     background: var(--color-background-variant);
     border-radius: 2rem;

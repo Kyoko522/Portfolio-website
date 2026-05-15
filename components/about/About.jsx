@@ -32,6 +32,7 @@ export default function About() {
               alt={`Sheel About ${currentImageIndex + 1}`}
               width={3024}
               height={4032}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
             />
           </div>
         </div>
@@ -42,14 +43,13 @@ export default function About() {
               <FaSchool className="about__icon" />
               <h5>University</h5>
               <small>Toronto Metropolitan University</small>
-              <small>Graduate Student</small>
+              <small>B.Sc. Computer Science</small>
             </article>
 
             <article className="about__card">
               <MdOutlineComputer className="about__icon" />
               <h5>Experience</h5>
-              <small>4 Years</small>
-              <small>Java Python JavaScript</small>
+              <small>Java, Python, JavaScript</small>
             </article>
 
             <article className="about__card">
@@ -60,30 +60,46 @@ export default function About() {
           </div>
 
           <div className="about__text">
-            <p>Hi, I&apos;m Sheel Patel</p>
+            <p>Hey, I&apos;m Sheel.</p>
             <p>
-              I&apos;m a Graduate Student in Computer Science at Toronto Metropolitan
-              University. I enjoy creating applications ranging from games
-              to practical tools like flashcards and chess simulators.
+              I just finished my Computer Science degree at TMU and I&apos;m already
+              thinking about what&apos;s next. Mechatronics for my Master&apos;s feels
+              right because honestly I&apos;ve never been able to pick just one side.
+              I love coding, I love hardware, and I love the moment when the two
+              actually work together. That&apos;s where the fun is.
             </p>
             <p>
-              When I&apos;m not focused on schoolwork, you&apos;ll find me designing robots,
-              working under the hood of a car, or coding with Arduino. I&apos;m
-              fascinated by AI and enjoy the perfect balance between solving
-              complex programming challenges and getting my hands dirty with
-              mechanical projects.
+              Cars are a big part of my life. I follow F1 pretty closely, I enjoy
+              getting under the hood, and at some point I just decided to build a
+              full telemetry dashboard so I could replay races the way I actually
+              wanted to see them. That kind of thing happens a lot with me. I get
+              into something, I want to understand it completely, and then I want
+              to build something around it.
             </p>
             <p>
-              I thrive in collaborative environments where ideas can be openly
-              discussed and tested. Gaming is another interest of mine — both
-              playing and developing games that create engaging experiences.
+              Outside of tech I stay pretty active. I scuba dive, play sports, and
+              I&apos;m usually looking for the next physical thing to get into. There&apos;s
+              something about being underwater or in the middle of a game where
+              everything else just turns off and you&apos;re fully locked in. I chase
+              that feeling a lot.
             </p>
             <p>
-              My approach to computer science is versatile; I enjoy tackling
-              different aspects of projects and paying attention to the details
-              that make technology work smoothly. (Most times at least!)
+              The way I approach projects is pretty similar. I like getting deep
+              into things, figuring out what&apos;s actually going on under the surface,
+              and iterating until it feels right. I&apos;m not great at leaving things
+              half finished. If something isn&apos;t working I&apos;d rather stay with it
+              and figure it out than move on and forget about it.
             </p>
-            <p>Welcome to my site — I&apos;m glad you&apos;re here!</p>
+            <p>
+              I also really enjoy collaborating. Some of my favorite projects came
+              out of just sitting with people, throwing ideas around, and building
+              something none of us would have come up with alone. That energy is
+              hard to replicate and I look for it wherever I can.
+            </p>
+            <p>
+              Anyway, this is my corner of the internet. Have a look around and
+              feel free to reach out.
+            </p>
 
             <a href="#contact" className="btn btn-primary">
               Let&apos;s Talk
