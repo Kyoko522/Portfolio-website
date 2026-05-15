@@ -55,7 +55,9 @@ export default function About() {
             <article className="about__card">
               <FaCode className="about__icon" />
               <h5>Projects</h5>
-              <small>10+</small>
+              <a href="https://sheelportfolio.vercel.app/vault" style={{ textDecoration: 'none', cursor: 'default' }}>
+                <small>10+</small>
+              </a>
             </article>
           </div>
 
