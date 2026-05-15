@@ -71,26 +71,28 @@ export default function About() {
               actually work together. That&apos;s where the fun is.
             </p>
             <p>
-              Cars are a big part of my life. I follow F1 pretty closely, I enjoy
-              getting under the hood, and at some point I just decided to build a
-              full telemetry dashboard so I could replay races the way I actually
-              wanted to see them. That kind of thing happens a lot with me. I get
-              into something, I want to understand it completely, and then I want
-              to build something around it.
+              Cars and motorcycles are a big part of my life. I love engines,
+              I love modding, and I love understanding exactly why something
+              performs the way it does and then changing it. Getting under the
+              hood and actually tweaking things is just as satisfying to me as
+              writing code. I follow F1 closely too, and at some point I just
+              built a full telemetry dashboard so I could replay races the way
+              I actually wanted to see them. That kind of thing happens a lot
+              with me. I get into something, I want to understand it completely,
+              and then I want to build something around it.
             </p>
             <p>
-              Outside of tech I stay pretty active. I scuba dive, play sports, and
-              I&apos;m usually looking for the next physical thing to get into. There&apos;s
-              something about being underwater or in the middle of a game where
-              everything else just turns off and you&apos;re fully locked in. I chase
-              that feeling a lot.
+              Outside of tech I stay pretty active. I play sports and I&apos;m always
+              looking for the next physical thing to get into. There&apos;s something
+              about being in the middle of a game where everything else just turns
+              off and you&apos;re fully locked in. I chase that feeling a lot.
             </p>
             <p>
-              The way I approach projects is pretty similar. I like getting deep
-              into things, figuring out what&apos;s actually going on under the surface,
-              and iterating until it feels right. I&apos;m not great at leaving things
-              half finished. If something isn&apos;t working I&apos;d rather stay with it
-              and figure it out than move on and forget about it.
+              The way I approach projects is pretty similar. I like figuring out
+              what&apos;s actually going on under the surface and iterating until it
+              feels right. I&apos;m not great at leaving things half finished. If
+              something isn&apos;t working I&apos;d rather stay with it and figure it out
+              than move on and forget about it.
             </p>
             <p>
               I also really enjoy collaborating. Some of my favorite projects came
