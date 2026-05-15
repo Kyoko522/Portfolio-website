@@ -1,5 +1,5 @@
 'use client'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { VAULT_BLOB } from './secret/encrypted'
 
@@ -47,6 +47,10 @@ export default function VaultPage() {
   const router   = useRouter()
   const inputRef = useRef(null)
 
+  useEffect(() => {
+    fetch('/api/vault-log', { method: 'POST' }).catch(() => {})
+  }, [])
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
@@ -90,7 +94,9 @@ export default function VaultPage() {
             {loading ? 'decrypting…' : 'authenticate →'}
           </button>
         </form>
-        <p className="hint">nothing to see here</p>
+        <a href="/" className="hint">
+          nothing to see here
+        </a>
       </div>
 
       <style>{`
@@ -189,11 +195,15 @@ export default function VaultPage() {
         .btn:active:not(:disabled) { transform: scale(0.98); }
         .btn:disabled { opacity: 0.6; cursor: not-allowed; }
         .hint {
+          display: block;
           font-size: 0.65rem;
           color: rgba(163,163,204,0.3);
           margin-top: 2rem;
           letter-spacing: 0.08em;
+          text-decoration: none;
+          cursor: default;
         }
+        .hint:hover { color: rgba(163,163,204,0.3); text-decoration: none; }
         @keyframes shake {
           10%,90%     { transform: translate3d(-2px,0,0); }
           20%,80%     { transform: translate3d(4px,0,0); }
