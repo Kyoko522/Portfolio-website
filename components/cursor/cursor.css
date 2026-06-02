@@ -1,0 +1,100 @@
+.cursor-circuit-layer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.cursor-circuit__seg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    color: var(--color-primary-lighter);
+    animation: cursor-circuit-fade 720ms linear forwards;
+    will-change: opacity;
+}
+
+.cursor-circuit__seg--spark {
+    animation-duration: 520ms;
+    animation-timing-function: cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+@keyframes cursor-circuit-fade {
+    0%   { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.cursor-circuit__line {
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: square;
+    filter: drop-shadow(0 0 4px currentColor);
+}
+
+.cursor-circuit__line--spark {
+    stroke-width: 2;
+    stroke-linecap: round;
+    filter: drop-shadow(0 0 5px currentColor);
+}
+
+.cursor-circuit__dot {
+    fill: currentColor;
+    filter: drop-shadow(0 0 3px currentColor);
+}
+
+/* ─── cursor head (position only, no transitions here) ────────── */
+.cursor-circuit__head {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 240ms ease;
+    will-change: transform;
+    transform: translate3d(-1000px, -1000px, 0) translate(-50%, -50%);
+    --head-scale: 1;
+    --head-glow: 0;
+}
+
+.cursor-circuit__head--visible {
+    opacity: 1;
+}
+
+/* inner core handles the visual: scale + glow react to speed */
+.cursor-circuit__head-core {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--color-light);
+    transform: scale(var(--head-scale, 1));
+    transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 180ms ease;
+    box-shadow:
+        0 0 calc(10px + 14px * var(--head-glow, 0))
+            rgba(254, 254, 223, calc(0.55 + 0.4 * var(--head-glow, 0))),
+        0 0 calc(20px + 18px * var(--head-glow, 0))
+            rgba(132, 94, 194, calc(0.4 + 0.55 * var(--head-glow, 0)));
+}
+
+@media (pointer: coarse) {
+    .cursor-circuit-layer,
+    .cursor-circuit__head {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cursor-circuit__seg {
+        animation-duration: 280ms;
+    }
+    .cursor-circuit__head-core {
+        transition: none;
+    }
+}

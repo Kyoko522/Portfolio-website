@@ -1,0 +1,246 @@
+.scene-section {
+    text-align: center;
+}
+
+.scene-stage {
+    position: relative;
+    width: min(56rem, 92vw);
+    margin: 1.6rem auto 0;
+    aspect-ratio: 16 / 10;
+    border-radius: 1.4rem;
+    overflow: hidden;
+    isolation: isolate;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.scene-stage__bg {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(132, 94, 194, 0.28), transparent 60%),
+        radial-gradient(ellipse at 0% 100%, rgba(122, 82, 204, 0.22), transparent 55%),
+        radial-gradient(ellipse at 100% 100%, rgba(0, 201, 167, 0.16), transparent 55%),
+        linear-gradient(180deg, var(--color-primary-darker), var(--color-background));
+    z-index: 0;
+}
+
+.scene-stage__bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 36px 36px;
+    mask-image: radial-gradient(ellipse at center, black 55%, transparent 95%);
+}
+
+.scene-hint {
+    position: absolute;
+    bottom: 0.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-primary-lighter);
+    opacity: 0.65;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ─── individual scene items ────────────────────────────────────── */
+.scene-item {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background: rgba(31, 31, 56, 0.7);
+    border: 1px solid rgba(163, 163, 204, 0.25);
+    backdrop-filter: blur(6px);
+    color: var(--color-light);
+    cursor: pointer;
+    padding: 0.85rem 0.95rem 0.55rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    min-width: 4.2rem;
+    z-index: 2;
+    transition: transform 220ms ease, background 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.scene-item:hover,
+.scene-item:focus-visible {
+    transform: translate(-50%, -55%) scale(1.08);
+    background: rgba(132, 94, 194, 0.85);
+    border-color: var(--color-light);
+    box-shadow:
+        0 0 0 2px rgba(254, 254, 223, 0.18),
+        0 14px 30px rgba(0, 0, 0, 0.45),
+        0 0 28px rgba(132, 94, 194, 0.55);
+    outline: none;
+}
+
+.scene-item:focus-visible {
+    outline: 2px solid var(--color-light);
+    outline-offset: 4px;
+}
+
+.scene-item__icon {
+    font-size: 1.75rem;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+    color: var(--color-light);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.scene-item__label {
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-primary-lighter);
+    transition: color 200ms ease;
+}
+
+.scene-item:hover .scene-item__label,
+.scene-item:focus-visible .scene-item__label {
+    color: var(--color-light);
+}
+
+/* a slow gentle pulse so items invite a click */
+.scene-item::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: inherit;
+    box-shadow: 0 0 0 0 rgba(132, 94, 194, 0.55);
+    animation: scene-item-pulse 3.4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.scene-item:nth-child(2)::before { animation-delay: 0.4s; }
+.scene-item:nth-child(3)::before { animation-delay: 0.9s; }
+.scene-item:nth-child(4)::before { animation-delay: 1.3s; }
+.scene-item:nth-child(5)::before { animation-delay: 1.7s; }
+.scene-item:nth-child(6)::before { animation-delay: 2.1s; }
+.scene-item:nth-child(7)::before { animation-delay: 2.5s; }
+.scene-item:nth-child(8)::before { animation-delay: 2.9s; }
+.scene-item:nth-child(9)::before { animation-delay: 3.3s; }
+
+@keyframes scene-item-pulse {
+    0%, 70%, 100% { box-shadow: 0 0 0 0 rgba(132, 94, 194, 0); }
+    20%  { box-shadow: 0 0 0 8px rgba(132, 94, 194, 0.35); }
+    35%  { box-shadow: 0 0 0 14px rgba(132, 94, 194, 0); }
+}
+
+/* ─── modal ─────────────────────────────────────────────────────── */
+.scene-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+}
+
+.scene-modal__scrim {
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 6, 24, 0.7);
+    backdrop-filter: blur(4px);
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    animation: scene-fade-in 220ms ease both;
+}
+
+.scene-modal__card {
+    position: relative;
+    background: var(--color-background);
+    color: var(--color-light);
+    border: 1px solid var(--color-primary);
+    border-radius: 1.2rem;
+    padding: 1.6rem 1.6rem 1.4rem;
+    max-width: 30rem;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 26px 60px rgba(0, 0, 0, 0.6);
+    animation: scene-card-in 280ms cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+
+.scene-modal__icon {
+    font-size: 2.6rem;
+    color: var(--color-primary-lighter);
+    display: grid;
+    place-items: center;
+    margin: 0 auto 0.6rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 999px;
+    background: rgba(132, 94, 194, 0.18);
+    border: 1px solid rgba(132, 94, 194, 0.45);
+}
+
+.scene-modal__title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+    color: var(--color-primary);
+}
+
+.scene-modal__text {
+    margin: 0 0 1.2rem 0;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--color-light);
+}
+
+.scene-modal__close {
+    min-width: 7rem;
+}
+
+@keyframes scene-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes scene-card-in {
+    from { opacity: 0; transform: translateY(14px) scale(0.96); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ─── reduced motion ────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    .scene-item,
+    .scene-modal__scrim,
+    .scene-modal__card {
+        animation: none;
+        transition: none;
+    }
+    .scene-item::before {
+        animation: none;
+        box-shadow: none;
+    }
+}
+
+/* ─── mobile ────────────────────────────────────────────────────── */
+@media screen and (max-width: 600px) {
+    .scene-stage {
+        aspect-ratio: 3 / 4;
+        width: min(22rem, 94vw);
+    }
+    .scene-item {
+        padding: 0.55rem 0.6rem 0.4rem;
+        min-width: 3.4rem;
+    }
+    .scene-item__icon {
+        font-size: 1.35rem;
+    }
+    .scene-item__label {
+        font-size: 0.6rem;
+    }
+    .scene-hint {
+        font-size: 0.6rem;
+    }
+}
