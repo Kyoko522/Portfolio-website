@@ -1,0 +1,5 @@
+1. Chapter 1 ([[Why and when to use TypeScript]])
+2. Chapter 2([[TypeScript Core Types]])
+3. Chapter 3([[Arrays In TypeScript]])
+4. Chapter 4([[Enums]])
+5. Chapter 5()

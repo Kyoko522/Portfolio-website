@@ -1,0 +1,7 @@
+- used by the file management system 
+- The OS has almost no knowledge of files 
+- These tables provide information on files 
+	- Their location in secondary memory \
+	- The current status
+	- other attributes 
+- The files referred to in the file tables are accessible via an I/O device and will sometimes be in main or virtual memory

@@ -1,0 +1,215 @@
+// Prisma schema — the single source of truth for the database shape.
+// `prisma migrate dev` turns this into SQL migrations; `prisma generate`
+// turns it into a fully-typed TypeScript client (import from src/db/prisma).
+//
+// Hosted on Supabase (Postgres). DATABASE_URL is the app connection; DIRECT_URL
+// is used for migrations.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// A user of the portal. Single user today, but every record below is owned by a
+// user, so adding more users later needs no schema change — just signup.
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+
+  resumeVersions ResumeVersion[]
+  applications   Application[]
+
+  // The "profile bank": the full pool of raw material the AI draws from to
+  // assemble a tailored résumé for any given job.
+  experiences    ExperienceItem[]
+  projects       ProjectItem[]
+  education      EducationItem[]
+  skills         SkillItem[]
+  tailoringSessions TailoringSession[]
+}
+
+// A snapshot of the résumé's LaTeX source, owned by a user. Saving a draft
+// upserts the user's single `isDraft` row; publishing marks a row `published`;
+// generating a cover letter snapshots the draft so we keep a record of exactly
+// what résumé was used for a given application.
+model ResumeVersion {
+  id        String   @id @default(cuid())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+  label     String?
+  texSource String
+  pdfPath   String?
+  published Boolean  @default(false)
+  isDraft   Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Applications that used this version, and cover letters generated from it.
+  applications Application[]
+  coverLetters CoverLetter[]
+
+  @@index([userId])
+}
+
+// One tracked job application, owned by a user.
+// status is one of: DRAFT | APPLIED | WAITING | INTERVIEW | OFFER | REJECTED | WITHDRAWN
+// (validated by zod in the API).
+model Application {
+  id             String    @id @default(cuid())
+  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId         String
+  company        String
+  role           String
+  jobUrl         String?
+  jobDescription String?
+  status         String    @default("DRAFT")
+  notes          String?
+  appliedAt      DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  // Which résumé version was used for this application (set when a cover letter
+  // is generated).
+  resumeVersion   ResumeVersion? @relation(fields: [resumeVersionId], references: [id], onDelete: SetNull)
+  resumeVersionId String?
+
+  coverLetters     CoverLetter[]
+  tailoringSession TailoringSession?
+
+  @@index([userId])
+}
+
+// A generated (and possibly hand-edited) cover letter, linked to the application
+// it's for and to the résumé version it was generated from.
+model CoverLetter {
+  id        String   @id @default(cuid())
+  content   String
+  model     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  application   Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  applicationId String
+
+  resumeVersion   ResumeVersion? @relation(fields: [resumeVersionId], references: [id], onDelete: SetNull)
+  resumeVersionId String?
+
+  @@index([applicationId])
+}
+
+// ─── Profile bank ───────────────────────────────────────────────────────────
+// The reusable pool of career material. You maintain these once; the tailoring
+// engine selects and reshapes the best-fit subset for each job. Dates are kept
+// as free-form strings ("Jan 2024", "Present") so the UI never has to wrestle
+// with timezones — they're only ever rendered, never compared.
+
+// A job / work experience entry.
+model ExperienceItem {
+  id        String   @id @default(cuid())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+  company   String
+  title     String
+  location  String?
+  startDate String?
+  endDate   String?
+  current   Boolean  @default(false)
+  // Raw accomplishment bullets in your own words. The Surgeon rewrites these
+  // into the XYZ formula at tailor time — keep them factual here.
+  bullets   String[]
+  // Tools / technologies used, used for keyword matching against a job.
+  skills    String[]
+  // Manual ordering for display in the editor.
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+}
+
+// A project entry (personal, academic, or professional).
+model ProjectItem {
+  id          String   @id @default(cuid())
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId      String
+  name        String
+  description String?
+  bullets     String[]
+  skills      String[]
+  url         String?
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([userId])
+}
+
+// An education entry.
+model EducationItem {
+  id        String   @id @default(cuid())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+  school    String
+  degree    String?
+  field     String?
+  location  String?
+  startDate String?
+  endDate   String?
+  gpa       String?
+  notes     String?
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+}
+
+// A single skill, optionally grouped under a category ("Languages",
+// "Frameworks", etc.) for a clean skills section.
+model SkillItem {
+  id        String   @id @default(cuid())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+  name      String
+  category  String?
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+}
+
+// ─── Tailoring ──────────────────────────────────────────────────────────────
+// One per application. Tracks the step-by-step "unrejectable résumé" loop:
+// ASSEMBLE → SCAN (Scanner) → OPERATE (Surgeon) → STRESS (Stress Test). Each
+// step advances `stage`, updates the working LaTeX in `texSource`, and stores
+// the structured AI output so the UI can show reports between steps.
+model TailoringSession {
+  id            String      @id @default(cuid())
+  user          User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId        String
+  application   Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  applicationId String      @unique
+
+  stage     String  @default("NEW") // NEW | ASSEMBLED | SCANNED | OPERATED | TESTED
+  texSource String? // current working résumé LaTeX
+
+  // Structured JSON outputs from each stage (match score, missing keywords,
+  // red flags, section ratings, 7-second-scan notes, etc.).
+  scannerReport Json?
+  stressReport  Json?
+  matchScore    Int? // Scanner's initial score
+  finalScore    Int? // Stress Test's re-score
+
+  model     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+}

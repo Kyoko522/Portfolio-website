@@ -1,0 +1,36 @@
+# Final Review theory stuff
+
+### Promblem Solving and Planning
+
+#### 1. Properties of the General Problem solver
+
+First stage: recursive rule for reachable
+Purpose -> Enuerates all reachable states(L) from the starting state (S) using the domain's transition rule
+Uses the legal_move/3 predicate to find valid transactions
+Recursively explores all states connected by valid move
+
+Second stage: Searching for a Sequence of legal moves
+Purpose -> Finds a specific path or sequence of actions to transition from the start state to the goal state 
+Often uses backtracking or heuristics to narrow the search
+
+```prolog
+reachable(S, S). % Base case: the start of the state is reachable
+reachable(S1, S2):-
+        legal_move(S1, _, S3), % apply a legal move
+        reachable(S3, S2). % recursively search for the goal
+```
+
+### 2. The Predicate legal_move(S2, Mm S1)
+Purpose -> Enable the ruels for value state transtions and Filter out invalid moves, reducing the search space. 
+
+```prolog
+legal_move([A | S], A, S) :- poss(A, S).  % Defines a move as legal if there is a precondition axiom that allows for it
+```
+
+### 3. Predicate max_length(List N) and reverse(List1, List2)
+Compute the maxium length of sublists in a list
+
+```prolog
+max_length([], N) :- N >= 0.
+max_length([First | L], N1) :- N1 > 0, N is N1 - 1, max_length(L, N).
+```

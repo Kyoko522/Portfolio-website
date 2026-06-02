@@ -1,0 +1,147 @@
+.about__container {
+    display: grid;
+    grid-template-columns: 35% 50%;
+    gap: 15%;
+    align-items: start;
+}
+
+.about__me {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 2rem;
+    background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
+    display: grid;
+    place-items: center;
+    overflow: visible;
+    cursor: pointer;
+}
+
+.about__me-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    overflow: hidden;
+    transform: rotate(10deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.about__me-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+}
+
+.about__me-image:hover {
+    transform: rotate(0deg);
+}
+
+.about__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.about__card {
+    background: var(--color-primary);
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.about__card:hover {
+    background: transparent;
+    border-color: var(--color-primary-variant);
+    background: var(--color-background-variant);
+    cursor: default;
+}
+
+.about__icon {
+    color: beige;
+    margin: 5px;
+    margin-top: 10px;
+}
+
+.about__card h5 {
+    font-size: 0.95rem;
+}
+
+.about__card small {
+    font-size: 0.7rem;
+    color: var(--color-light);
+    display: block;
+}
+
+.about__content {
+    margin: 2rem 0 2.6rem;
+}
+
+.about__content p {
+    margin: 1rem 0;
+    color: var(--color-light);
+    text-align: justify;
+}
+
+.about__text {
+    text-align: center;
+}
+
+.about__text .btn {
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+/* Making it responsive for tablets */
+@media screen and (max-width: 1028px) {
+    .about__container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .about__me {
+        width: 60%;
+        max-width: 250px;
+        margin: 2rem auto 4rem;
+        aspect-ratio: 3 / 4;
+    }
+
+    .about__me-image {
+        width: 100%;
+        height: 100%;
+    }
+
+    .about__content p {
+        margin: 1rem 0 1.5rem;
+    }
+}
+
+/* Making it responsive for mobile */
+@media screen and (max-width: 600px) {
+    .about__me {
+        width: 70%;
+        max-width: 200px;
+        margin: 0 auto 3rem;
+        aspect-ratio: 3 / 4;
+    }
+
+    .about__me-image {
+        width: 100%;
+        height: 100%;
+    }
+
+    .about__cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .about__content {
+        text-align: center;
+    }
+
+    .about__content p {
+        margin: 1.5rem 0;
+    }
+}

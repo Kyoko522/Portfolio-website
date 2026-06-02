@@ -1,0 +1,4 @@
+- pages other than the one demanded by a page fault are brought in 
+- exploits the characteristic of most secondary memory device 
+- if pages of a process are stored contiguously in secondary memory it is more efficient to bring in a number of pages at one time 
+- ineffective if extra pages are not referenced

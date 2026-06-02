@@ -1,0 +1,198 @@
+%-------------------------
+% Career-Ops LaTeX CV Template
+% Theme: Modern Serif (Jake's Resume style)
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+% glyphtounicode is a pdfTeX feature; guard it so the file also compiles under
+% XeTeX/Tectonic (which produces Unicode-mapped, ATS-parsable PDFs natively).
+\ifdefined\pdfgentounicode\input{glyphtounicode}\fi
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.3in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable (pdfTeX only)
+\ifdefined\pdfgentounicode\pdfgentounicode=1\fi
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.00\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{1.00\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.00\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize} \vspace{-18pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\huge \scshape Sheel Patel} \\
+    \small Allentown, PA $|$
+    \vspace{3pt}
+    \small 484-747-2154 $|$
+    \vspace{3pt}
+    \small \href{mailto:sheelp2004@gmail.com}{sheelp2004@gmail.com} $|$
+    \vspace{3pt}
+    \href{https://linkedin.com/in/s60patel}{linkedin.com/in/s60patel} $|$
+    \href{https://github.com/Kyoko522}{github.com/Kyoko522} $|$
+    \href{https://sheelportfolio.vercel.app}{sheelportfolio.vercel.app}
+    \vspace{-12pt}% was -9pt, saves 3pt redistributed below
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Toronto Metropolitan University (formerly Ryerson University)}{Toronto, ON}
+      {Bachelor of Science in Computer Science (Co-op); GPA: 3.77 $|$ Dean's List}{Sept 2022 -- April 2026}
+      \resumeItemListStart
+        \resumeItem{\textbf{Coursework:} Data Structures, Algorithms, Software Engineering (SDLC, Agile), Database Systems I \& II, Operating Systems, Computer Networks, Web Systems Development, Web Applications, Computer Security, Machine Learning, Computer Vision}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\vspace{4pt}% +4pt added here, funded from Technical Skills below
+\section{Work Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Data Analyst}{Sept 2023 -- Jun 2024}
+      {Practical Applications of Computer Science}{Toronto, ON}
+      \resumeItemListStart
+        \resumeItem{\textbf{Engineered} data pipelines for 1000+ website interactions using \textbf{PostgreSQL and Python}, boosting engagement by 40\%.}
+        \resumeItem{\textbf{Deployed} infrastructure across OpenShift, AWS, and private cloud, sustaining 99.7\% uptime across 10+ deployments.}
+        \resumeItem{\textbf{Analyzed} event registration data, identifying 8 critical UI bottlenecks that reduced no-show rates by 35\%.}
+        \resumeItem{\textbf{Led} team of 10+ staff using \textbf{Jira/Confluence}, implementing workflows that increased task completion by 80\%.}
+      \resumeItemListEnd
+    
+    \resumeSubheading
+      {Lifeguard}{May 2023 -- Sept 2024}
+      {Canada's Wonderland}{Toronto, ON}
+      \resumeItemListStart
+        \resumeItem{\textbf{Monitored} safety of 1000+ daily guests, enforcing protocols that reduced reported incidents by 20\%.}
+        \resumeItem{\textbf{Collaborated} with 15+ team members on emergency protocols, decreasing response time by 20\% with 100\% positive feedback}
+        \resumeItem{\textbf{Documented} safety incidents and improvements, enhancing training effectiveness for 30+ new staff members.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\vspace{4pt}% +4pt added here, funded from Technical Skills below
+\section{Personal Projects}
+    \resumeSubHeadingListStart
+        \resumeProjectHeading
+          {\textbf{\href{https://github.com/Kyoko522/Grit}{F1 Real-Time Dashboard}} \emph{$|$ Python, FastAPI, pandas, React, Canvas API, Docker}}{}
+          \resumeItemListStart
+            \resumeItem{\textbf{Analyzed} GPS telemetry from 100+ F1 sessions using \textbf{Python}, \textbf{pandas}, and FastF1, applying 3$\times$ downsampling logic to identify lap performance patterns and improve visualization accuracy by 35\% across all 20 drivers.}
+            \resumeItem{\textbf{Engineered} thread-safe session cache with \textbf{LRU} eviction capped at 5 sessions, ensuring only one thread loads each FastF1 session while up to 20 concurrent requests await and share the cached result, reducing average load time by 60\%.}
+            \resumeItem{\textbf{Implemented} \textbf{FastAPI} backend with a unified session-init endpoint returning driver data, lap positions, and track outline in one call, consolidating 3 sequential page-load round-trips into 1 and reducing data payload overhead by 60\%.}
+            \resumeItem{\textbf{Developed} 60fps \textbf{Canvas} renderer via \textbf{requestAnimationFrame} reading all live state through refs with zero React re-renders, pre-rendering the static track to an offscreen canvas and achieving smooth real-time playback at 8$\times$ speed.}
+          \resumeItemListEnd
+        \resumeProjectHeading
+          {\textbf{\href{https://github.com/koshgupta/cps630-Assignment-2}{PawFind}} \emph{$|$ React, Node.js, Express, MongoDB, Socket.IO, Docker}}{}
+          \resumeItemListStart
+            \resumeItem{\textbf{Architected} full-stack \textbf{Node.js}/\textbf{MongoDB} data platform with 5 Mongoose schemas and \textbf{JWT} tiered middleware, enabling role-based access control across admin and user routes and eliminating unauthorized data access.}
+            \resumeItem{\textbf{Integrated} \textbf{Socket.IO} WebSocket layer with \textbf{MongoDB}-persisted message store, cutting server polling overhead and enabling real-time bidirectional data streaming across 9 REST API endpoints for concurrent admin and user sessions.}
+            \resumeItem{\textbf{Constructed} \textbf{Docker Compose} deployment pipeline with automated \textbf{MongoDB} seeding, reducing environment setup from manual configuration to a single command and ensuring consistent data state across 5 collections.}
+            \resumeItem{\textbf{Optimized} socket room topology using per-conversation rooms and in-memory connection tracking, eliminating cross-session message bleed and enabling live admin inbox updates without polling for concurrent multi-conversation monitoring.}
+          \resumeItemListEnd
+        \resumeProjectHeading
+          {\textbf{\href{https://github.com/Kyoko522/Dance-Club-Management-App}{Event Management System}} \emph{$|$ Ruby on Rails, SQLite, Heroku, React}}{}
+          \resumeItemListStart
+            \resumeItem{\textbf{Developed} data management platform using Ruby on Rails, processing records for 25+ events and 500+ monthly attendees.}
+            \resumeItem{\textbf{Engineered} 20 reporting components with \textbf{Tailwind} and \textbf{React}, reducing dashboard development time by 40\%.}
+            \resumeItem{\textbf{Streamlined} data operations with \textbf{Go} and \textbf{SQLite3}, achieving 99.8\% transformation accuracy and 60\% faster queries.}
+            \resumeItem{\textbf{Implemented} \textbf{JWT} authentication workflows, securing 300+ user accounts while reducing system access issues by 75\%.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------SUMMARY OF QUALIFICATIONS-----------
+\vspace{4pt}% +4pt added here, funded from Technical Skills below
+\section{Summary of Qualifications}
+ \begin{itemize}[leftmargin=0.0in, label={}]
+        \resumeItem{Proficient in \textbf{Java}, \textbf{Python}, \textbf{SQL}, \textbf{JavaScript}, C/C++, Go, Ruby, data analysis (\textbf{pandas}, \textbf{matplotlib}), \textbf{ETL processes}, and data transformation workflows with 95\% accuracy across production analytics systems.}
+        \resumeItem{Experienced with \textbf{PostgreSQL}, MySQL, MongoDB, SQLite, database optimization, and designing efficient data models that reduced query response times by 40-60\% across multiple analytics projects.}
+        \resumeItem{Skilled in \textbf{Jira/Confluence}, Git, CI/CD pipelines, \textbf{REST API integrations}, cloud platforms (\textbf{AWS}, OpenShift), and implementing workflow automation solutions that reduced inefficiencies by 30-40\%.}
+        \resumeItem{Demonstrated ability in architecting full-stack applications, building data integration pipelines, implementing authentication protocols (\textbf{OAuth}, \textbf{JWT}), and delivering end-to-end SDLC solutions with 98\% reliability across multiple platforms.}
+        \resumeItem{Strong analytical problem-solving skills with expertise in translating complex requirements into actionable development tasks for diverse stakeholders, resulting in measurable operational improvements.}
+ \end{itemize}
+
+%-----------TECHNICAL SKILLS-----------
+\vspace{-15pt}% removed 15pt here to fund: 3pt header + 4pt WE + 4pt Projects + 4pt Summary = 15pt
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Java, Python, SQL (PostgreSQL, MySQL, SQLite), JavaScript, C/C++, Go, Ruby, Bash} \\
+     \textbf{Data \& Analytics}{: pandas, matplotlib, numpy, ETL pipelines, data modeling, REST API integrations, FastAPI} \\
+     \textbf{Tools \& Cloud}{: Git, Jira/Confluence, AWS, OpenShift, Docker, CI/CD, React, Next.js, Node.js, Spring Boot}
+    }}
+ \end{itemize}
+
+\end{document}
+

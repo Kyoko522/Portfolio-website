@@ -1,0 +1,3 @@
+# The admin portal is a separate local/self-hosted app — never deploy it to
+# Vercel with the public portfolio.
+admin

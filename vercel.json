@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/f1-dashboard/:path*",
+      "destination": "https://sheels-f1-dashboard.vercel.app/:path*"
+    }
+  ]
+}

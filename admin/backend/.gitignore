@@ -1,0 +1,12 @@
+node_modules
+dist
+.env
+*.local
+
+# Prisma SQLite database files
+prisma/*.db
+prisma/*.db-journal
+
+# Compiled PDF artifacts / temp LaTeX build dirs
+tmp/
+*.pdf
