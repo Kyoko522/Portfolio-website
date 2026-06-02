@@ -25,6 +25,9 @@ const envSchema = z.object({
   // Model used for the résumé tailoring pipeline (assemble/scan/surgeon/stress).
   RESUME_MODEL: z.string().default('claude-opus-4-7'),
 
+  // Optional: Discord webhook for admin login notifications (success/failure).
+  DISCORD_WEBHOOK_URL: z.string().url().optional(),
+
   PUBLISH_PDF_PATH: z.string().default('../../public/assets/Resume.pdf'),
   // env vars are always strings; treat only the literal "true" as true.
   PUBLISH_GIT_ENABLED: z

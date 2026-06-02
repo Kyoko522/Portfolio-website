@@ -37,6 +37,16 @@ async function tryDecrypt(password) {
   }
 }
 
+// Fire-and-forget Discord notification for a vault event (visit / unlock_success
+// / unlock_failed). Never blocks or throws into the UI.
+function logVault(event, attempt) {
+  fetch('/api/vault-log', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(attempt ? { event, attempt } : { event }),
+  }).catch(() => {})
+}
+
 function getMaxAttempts() {
   const stored = localStorage.getItem('vault_max')
   if (stored) return parseInt(stored, 10)
@@ -73,7 +83,7 @@ export default function VaultPage() {
   const inputRef = useRef(null)
 
   useEffect(() => {
-    fetch('/api/vault-log', { method: 'POST' }).catch(() => {})
+    logVault('visit')
 
     const { locked: isLocked, remaining } = getLockoutState()
     const stored = parseInt(localStorage.getItem('vault_attempts') || '0', 10)
@@ -109,6 +119,7 @@ export default function VaultPage() {
     const plaintext = await tryDecrypt(password)
 
     if (plaintext) {
+      logVault('unlock_success')
       sessionStorage.setItem('vault_auth', '1')
       sessionStorage.setItem('vault_data', plaintext)
       router.push('/vault/secret')
@@ -116,6 +127,7 @@ export default function VaultPage() {
       const newAttempts = attempts + 1
       localStorage.setItem('vault_attempts', String(newAttempts))
       setAttempts(newAttempts)
+      logVault('unlock_failed', newAttempts)
 
       if (newAttempts >= maxAttempts) {
         localStorage.setItem('vault_lockout', String(Date.now()))
